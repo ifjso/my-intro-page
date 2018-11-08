@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "bfj": "6.1.1",
     "chalk": "2.4.1",
     "dotenv": "6.0.0",
