@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "env": {
         "browser": true,
@@ -50,45 +49,3 @@
         "react/jsx-uses-vars": "error"
     }
 }
-||||||| merged common ancestors
-=======
-{
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "node": true
-    },
-    "extends": [
-        "plugin:react/recommended"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "off",
-            "unix"
-        ],
-        "quotes": [
-            "off",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
-}
->>>>>>> b4c50f2d1ad8cf202f50b7ce612d09c024661141
