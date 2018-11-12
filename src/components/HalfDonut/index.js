@@ -2,14 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './HalfDonut.scss';
 
-const Donut = ({ width = 124, height = 124, borderWidth = 12, borderColor = 'black' }) =>
-    <div className="half_donut" style={{width, height, borderWidth, borderColor}}></div>;
+// https://codepen.io/tutsplus/pen/zBVELP
+const HalfDonut = ({style = {}, aos = {}}) =>
+    <div className="half_donut"
+        data-aos={aos.type}
+        data-aos-duration={aos.duration}
+        style={style}>
+    </div>;
 
-Donut.propTypes = {
-    width: PropTypes.number,
-    height: PropTypes.number,
-    borderWidth: PropTypes.number,
-    borderColor: PropTypes.string
+HalfDonut.propTypes = {
+    style: PropTypes.shape({
+        top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+        left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+        width: PropTypes.number,
+        height: PropTypes.number,
+        borderWidth: PropTypes.number,
+        borderColor: PropTypes.string
+    }),
+    aos: PropTypes.shape({
+        type: PropTypes.string,
+        duration: PropTypes.number
+    })
 };
 
-export default Donut;
+export const aosType = {
+    ROTATE: 'half_donut_rotate'
+};
+
+export default HalfDonut;

@@ -1,4 +1,4 @@
-$donut-width: 62px;
+$donut-width: 124px;
 // $graph4-height: 350px;
 
 .App {
@@ -8,7 +8,12 @@ $donut-width: 62px;
 .wrap_donut {
   position: absolute;
   left: 50%;
+  width: $donut-width / 2;
+  height: $donut-width;
   margin-left: -$donut-width / 2;
+  transform: rotate(180deg);
+  transform-origin: 100% 50%; 
+  overflow: hidden;
 }
 
 // .bg-graph {
