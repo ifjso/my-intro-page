@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import AOS from 'aos';
-import "aos/dist/aos.css";
+import 'aos/dist/aos.css';
 import './App.scss';
+import HalfDonut from './components/HalfDonut';
 
 class App extends Component {
     componentDidMount() {
-        AOS.init({
-            once: true,
-            easing: "ease-in-out-sine"
-        });
+        AOS.init({ once: true });
 
-        document.addEventListener('aos:in:graph-2', ({ detail }) => {
-            console.log('animated in', detail);
-        });
+        // document.addEventListener('aos:in:graph-2', ({ detail }) => {
+        // console.log('animated in', detail);
+        // });
     }
 
     render() {
@@ -20,7 +18,9 @@ class App extends Component {
         
         return (
             <div className="App">
-                <div className="wrap-graph">
+                <div className="wrap_donut">
+                    <HalfDonut width={124} height={124} borderWidth={12} borderColor="#EA5800" />
+
                     {/* <div className="graph2 bg-graph" 
                         data-aos="rotate-graph"
                         data-aos-duration={graphDuration}></div>

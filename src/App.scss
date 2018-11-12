@@ -1,15 +1,15 @@
-// $graph4-width: 354px;
+$donut-width: 62px;
 // $graph4-height: 350px;
 
 .App {
   text-align: center;
 }
 
-// .wrap-graph {
-//   position: absolute;
-//   left: 50%;
-//   margin-left: -$graph4-width / 2;
-// }
+.wrap_donut {
+  position: absolute;
+  left: 50%;
+  margin-left: -$donut-width / 2;
+}
 
 // .bg-graph {
 //   // position: absolute;
