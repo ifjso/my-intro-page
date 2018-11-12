@@ -40,7 +40,7 @@ $donuts : 0 !global;
 		animation: donut#{$donuts} $ani;
 		@include donut($vars);
 		border: #{$width}px solid $color;
-		border-radius: 50%;
+		// border-radius: 50%;
 		box-sizing: border-box;
 		content: '';
 		height: 100%;

@@ -1,0 +1,122 @@
+$donut-color : #7beca3, #ff8265, #fff68c;
+$donuts : 0 !global;
+
+@mixin clip-path($clip) {
+  clip-path: $clip;
+}
+@mixin donut($vars){
+	@include clip-path(polygon(nth($vars,1),nth($vars,2),nth($vars,3),nth($vars,4),0% 0%,50% 50%));		
+}
+@function donutVars($per){
+	$v1 : 0% 50%;
+	$v2 : 0% 100%;
+	$v3 : 100% 100%;
+	$v4 : 100% 0%;
+	@if($per >= 75){
+		$v1 : 0% #{((100 - $per) / 25) * 100}#{'%'};
+    }
+	@else if($per >= 50){
+		$v1 : #{((75 - $per) / 25) * 100}#{'%'} 100%;
+		$v2 : $v1;
+	}	
+	@else if($per >= 25){
+		$v1 : 100% #{((25 - (50 - $per)) / 25) * 100}#{'%'};
+		$v2 : $v1;
+		$v3 : $v1;
+	}	
+	@else if($per >= 0){
+		$v1 : #{((25 - (25 - $per)) / 25) * 100}#{'%'} 0%;
+		$v2 : $v1;
+		$v3 : $v1;
+		$v4 : $v1;
+	}
+	@return ($v1,$v2,$v3,$v4);
+}
+
+@mixin donutChart($color, $per, $width, $end: false, $ani: 5s linear forwards 1) {
+	$vars : donutVars($per);
+	$donuts : $donuts + 1 !global;
+	&:before{
+		animation: donut#{$donuts} $ani;
+		@include donut($vars);
+		border: #{$width}px solid $color;
+		// border-radius: 50%;
+		box-sizing: border-box;
+		content: '';
+		height: 100%;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%) rotate(45deg);
+		transform-origin: center center;
+		width: 100%;
+	}
+	@if ($end){
+		@keyframes donut#{$donuts}{
+			@for $j from $per through $end {
+				#{((abs($j - $per) / abs($per - $end)) * 100)}#{'%'}{
+					$v : donutVars($j); 
+					@include donut($v);
+				}
+			}
+		}
+	}
+}
+
+
+.jelly{
+	color: #ddd;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	// &.static{
+	// 	@include donutChart(50, 10);
+	// }
+	// &.fullani{
+	// 	@include donutChart(0,10,100,1s cubic-bezier(0.57, 0.06, 0.46, 0.93) forwards infinite);
+	// }
+	// &.partani{
+	// 	@include donutChart(0,10,100);
+	// }	
+}
+.don {
+	$vars: donutVars(0);
+	@include donut($vars);
+	border: 20px solid #7beca3;
+	border-radius: 50%;
+	box-sizing: border-box;
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	transform: rotate(45deg);
+}
+
+// https://medium.com/@pppped/how-to-code-a-responsive-circular-percentage-chart-with-svg-and-css-3632f8cd7705
+[data-aos="don-t"] {
+	transition-property: none;
+	&.aos-animate {
+		animation: donut#{$donuts} 3s cubic-bezier(0.42, 0, 0.69, 0.68) forwards 1;
+		@keyframes donut#{$donuts} {
+			@for $j from 0 through 100 {
+				#{((abs($j - 0) / abs(0 - 100)) * 100)}#{'%'} {
+					@include donut(donutVars($j));
+				}
+			}
+		}
+	}
+}
+
+[data-aos="donut"] {
+    $vars : donutVars(0);
+    &:before{
+        @include donut($vars);
+        border: 20px solid #7beca3;
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    &.aos-animate {
+        @include donutChart(#7beca3, 0, 20, 90);
+    }
+}

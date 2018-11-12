@@ -1,39 +1,39 @@
-$graph4-width: 354px;
-$graph4-height: 350px;
+// $graph4-width: 354px;
+// $graph4-height: 350px;
 
 .App {
   text-align: center;
 }
 
-.wrap-graph {
-  position: absolute;
-  left: 50%;
-  margin-left: -$graph4-width / 2;
-}
+// .wrap-graph {
+//   position: absolute;
+//   left: 50%;
+//   margin-left: -$graph4-width / 2;
+// }
 
-.bg-graph {
-  // position: absolute;
-  width: $graph4-width;
-  height: $graph4-height;
-}
+// .bg-graph {
+//   // position: absolute;
+//   width: $graph4-width;
+//   height: $graph4-height;
+// }
 
-.graph0 {
-  background: url("./graph_2.png") no-repeat;
-}
+// .graph0 {
+//   background: url("./graph_2.png") no-repeat;
+// }
 
-.graph1 {
-  background: url("./graph_3.png") no-repeat;
-}
+// .graph1 {
+//   background: url("./graph_3.png") no-repeat;
+// }
 
-.graph2 {
-  background: url("./graph_4.png") no-repeat;
-  background-size: $graph4-width $graph4-height;
-}
+// .graph2 {
+//   background: url("./graph_4.png") no-repeat;
+//   background-size: $graph4-width $graph4-height;
+// }
 
-[data-aos="rotate-graph"] {
-  transform: rotate(0);
-  transition-property: transform;
-  &.aos-animate {
-    transform: rotate(180deg);
-  }
-}
+// [data-aos="rotate-graph"] {
+//   transform: rotate(0);
+//   transition-property: transform;
+//   &.aos-animate {
+//     transform: rotate(180deg);
+//   }
+// }
