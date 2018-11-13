@@ -6,9 +6,8 @@ $budgetCardWidth: 250px;
 $budgetCardHeight: 172px;
 
 .budget-card {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    float: left;
     width: $budgetCardWidth;
     height: $budgetCardHeight;
     background-size: $budgetCardWidth $budgetCardHeight;
