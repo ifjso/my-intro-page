@@ -1,33 +1,35 @@
 /* --------------------------------------------------------
 author: Dval
 ----------------------------------------------------------*/
-$donut-width: 124px;
+$half-donut-widths: 62px;
+$half-donut-heights: 122px;
 
-.half_donut {
+.wrap-half-donut0 {
 	position: absolute;
-	top: 0;
-	left: 0;
-	box-sizing: border-box;
-	border-style: solid;
-	border-right: none;
-	border-top-left-radius: $donut-width / 2;
-	border-bottom-left-radius: $donut-width / 2;
-	// border-radius: 50%;
-	border-width: 12px;
-	border-color: black;
-	width: inherit;
-	height: inherit;
-	// clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);
-	// transition: transform 5s linear;
-	// animation: 'yo' 5s linear forwards infinite;
-//	animation: name duration timing-function delay iteration-count direction fill-mode;
+	left: 50%;
+	width: nth($half-donut-widths, 1);
+	height: nth($half-donut-heights, 1);
+	overflow: hidden;
 }
 
-// [data-aos="half_donut_rotate"] {
-// 	transform: rotate(0);
-// 	transform-origin: 100% 50%;
-// 	transition-property: transform;
-// 	&.aos-animate {
-// 		transform: rotate(180deg);
-// 	}
-// }
+.half-donut0 {
+	position: absolute;
+	background-image: url('../../images/w640/graph_4.png');
+	background-size: nth($half-donut-widths, 1) nth($half-donut-heights, 1);
+	width: nth($half-donut-widths, 1);
+	height: nth($half-donut-heights, 1);
+	transform: rotate(-180deg);
+	transform-origin: 0% 50%;
+}
+
+[data-aos="rotate-out-back"] {	
+	transition-property: none;
+	&.aos-animate {
+		animation: rotate-out-back 1s linear forwards 1;
+	}
+}
+
+@keyframes rotate-out-back {
+	86% { transform: rotate(0deg); }
+	100% { transform: rotate(-30deg); }
+}

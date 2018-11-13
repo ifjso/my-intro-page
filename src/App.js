@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.scss';
-import HalfDonut, { aosType } from './components/HalfDonut';
+import HalfDonut, { halfDonutType, aosType } from './components/HalfDonut';
 
 class App extends Component {
     componentDidMount() {
@@ -17,19 +17,9 @@ class App extends Component {
     }
 
     render() {
-        // const top = 124;
-        const duration = 3000;
-        const type = aosType.ROTATE;
-        const borderColor = '#EEEEEE';  // '#EA5800';
-
         return (
             <div className="App">
-                <div className="wrap_donut">
-                    <HalfDonut style={{borderColor}} />
-                </div>
-                <div className="wrap_donut">
-                    <HalfDonut style={{borderColor: '#EA5800', left: '50%'}} aos={{type, duration}} />
-                </div>
+                <HalfDonut type={halfDonutType.HALF_DONUT_0} aos={{type: aosType.ROTATE_OUT_BACK}} />
             </div>
         );
     }
