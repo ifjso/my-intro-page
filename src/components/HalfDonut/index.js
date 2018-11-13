@@ -1,14 +1,14 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import './HalfDonut.scss';
 
 const HalfDonut = ({type, aos = {}, style = {}}) =>
-    <div className={`wrap-half-donut${type}`}>
-        <div className={`half-donut${type}`}
-            data-aos={aos.type}
-            data-aos-duration={aos.duration}
-            style={style}>
-        </div>
+    <div className={`wrap-half-donut${type}`} style={style}>
+        <div className={`half-donut${type}`} data-aos={aos.type} data-aos-duration={aos.duration} />
     </div>;
 
 HalfDonut.propTypes = {
@@ -30,9 +30,11 @@ export const halfDonutType = {
     HALF_DONUT_2: '2',
 };
 
-export const aosType = {
+export const halfDonutAnimType = {
     ROTATE_OUT_BACK: 'rotate-out-back',
-    ROTATE: 'rotate'
+    ROTATE: 'rotate',
+    ROTATE_DELAY0: 'rotate-delay0',
+    ROTATE_DELAY1: 'rotate-delay1'
 };
 
 export default HalfDonut;

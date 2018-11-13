@@ -10,6 +10,6 @@ $donut-size: 118px;
     height: $donut-size;
     background-image: url("../../images/w640/graph_0.png");
     background-size: $donut-size $donut-size;
-    left: 50%;
-    margin-left: -$donut-size / 2;
+    top: 0;
+    left: 0;
 }

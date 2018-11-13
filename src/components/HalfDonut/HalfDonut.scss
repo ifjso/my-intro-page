@@ -2,8 +2,8 @@
 author: Dval
 ----------------------------------------------------------*/
 
-$half-donut-widths: 62px, 59px, 59px, 62px;
-$half-donut-heights: 122px, 116px, 118px, 122px;
+$half-donut-widths: 62px, 59px, 62px;
+$half-donut-heights: 122px, 116px, 122px;
 
 .wrap-half-donut {
 	position: absolute;
@@ -14,8 +14,8 @@ $half-donut-heights: 122px, 116px, 118px, 122px;
 	@extend .wrap-half-donut;
 	width: nth($half-donut-widths, 1);
 	height: nth($half-donut-heights, 1);
-	left: 50%;
-	margin-left: -nth($half-donut-widths, 1) / 2;
+	top: 0;
+	left: 0;
 }
 
 .wrap-half-donut1 {
@@ -23,8 +23,17 @@ $half-donut-heights: 122px, 116px, 118px, 122px;
 	top: 3px;
 	width: nth($half-donut-widths, 2);
 	height: nth($half-donut-heights, 2);
-	left: 50%;
-	margin-left: -nth($half-donut-widths, 2) / 2;
+	top: 0;
+	left: 0;
+}
+
+.wrap-half-donut2 {
+	@extend .wrap-half-donut;
+	top: 3px;
+	width: nth($half-donut-widths, 3);
+	height: nth($half-donut-heights, 3);
+	top: 0;
+	left: 0;
 }
 
 .half-donut {
@@ -50,17 +59,40 @@ $half-donut-heights: 122px, 116px, 118px, 122px;
 	transform: rotate(-180deg);
 }
 
+.half-donut2 {
+	@extend .half-donut;
+	background-image: url('../../images/w640/graph_3.png');
+	background-size: nth($half-donut-widths, 3) nth($half-donut-heights, 3);
+	width: nth($half-donut-widths, 3);
+	height: nth($half-donut-heights, 3);
+	transform: rotate(-180deg);
+}
+
 [data-aos="rotate-out-back"] {	
 	transition-property: none;
 	&.aos-animate {
-		animation: rotate-out-back 1.6s linear forwards 1;
+		animation: rotate-out-back 0.8s linear forwards 1;
 	}
 }
 
 [data-aos="rotate"] {	
 	transition-property: none;
 	&.aos-animate {
-		animation: rotate 1.28s linear forwards 1;
+		animation: rotate0 0.64s linear forwards 1;
+	}
+}
+
+[data-aos="rotate-delay0"] {	
+	transition-property: none;
+	&.aos-animate {
+		animation: rotate0 0.64s linear 0.64s forwards 1;
+	}
+}
+
+[data-aos="rotate-delay1"] {	
+	transition-property: none;
+	&.aos-animate {
+		animation: rotate1 0.18s linear 1.28s forwards 1;
 	}
 }
 
@@ -69,6 +101,10 @@ $half-donut-heights: 122px, 116px, 118px, 122px;
 	100% { transform: rotate(-45deg); }
 }
 
-@keyframes rotate {
+@keyframes rotate0 {
 	100% { transform: rotate(0deg); }
+}
+
+@keyframes rotate1 {
+	100% { transform: rotate(-145deg); }
 }
