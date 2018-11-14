@@ -18,7 +18,7 @@ const BudgetCards = () => {
 
     return (
         <div className="intro-budget">
-            <div className="wrap-budget-card"
+            <div className="wrap-budget-cards"
                 data-aos="swipe-card"
                 data-aos-id="swipe-card"
                 data-aos-easing="ease-in-out" 
@@ -29,7 +29,7 @@ const BudgetCards = () => {
                 <BudgetCard type={budgetCardType.BUDGET_CARD_0} />
 
                 <BudgetCard type={budgetCardType.BUDGET_CARD_1}>
-                    <Donut style={{top: 27, left: 24}}/>
+                    <Donut style={{top: 22, left: 20}}/>
                     <HalfDonut
                         type={halfDonutType.HALF_DONUT_0}
                         style={{top: 24, left: 84}}
@@ -45,7 +45,7 @@ const BudgetCards = () => {
                 </BudgetCard>
 
                 <BudgetCard type={budgetCardType.BUDGET_CARD_2}>
-                    <Donut style={{top: 27, left: 24}}/>
+                    <Donut style={{top: 22, left: 20}}/>
                     <HalfDonut 
                         type={halfDonutType.HALF_DONUT_1} 
                         style={{top: 28, left: 84}}
@@ -56,7 +56,8 @@ const BudgetCards = () => {
                     />
                 </BudgetCard>
             </div>
-        </div>);
+        </div>
+    );
 }
 
 export default BudgetCards;

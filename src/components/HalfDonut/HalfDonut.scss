@@ -41,7 +41,7 @@ author: Dval
 }
 
 .half-donut0 {
-	background-image: url('../../images/w640/graph_1.png');
+	background-image: url('../../images/w640/img_graph_orange.png');
 	background-size: nth($halfDonutWidths, 1) nth($halfDonutHeights, 1);
 	width: nth($halfDonutWidths, 1);
 	height: nth($halfDonutHeights, 1);
@@ -49,7 +49,7 @@ author: Dval
 }
 
 .half-donut1 {
-	background-image: url('../../images/w640/graph_2.png');
+	background-image: url('../../images/w640/img_graph_green.png');
 	background-size: nth($halfDonutWidths, 2) nth($halfDonutHeights, 2);
 	width: nth($halfDonutWidths, 2);
 	height: nth($halfDonutHeights, 2);
@@ -57,7 +57,7 @@ author: Dval
 }
 
 .half-donut2 {
-	background-image: url('../../images/w640/graph_3.png');
+	background-image: url('../../images/w640/img_graph_red.png');
 	background-size: nth($halfDonutWidths, 3) nth($halfDonutHeights, 3);
 	width: nth($halfDonutWidths, 3);
 	height: nth($halfDonutHeights, 3);

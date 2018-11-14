@@ -1,0 +1,16 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+.wrap-budget-card {
+    position: relative;
+    width: $budgetCardWidth;
+    height: $wrapBudgetCardHeight;
+    float: left;
+}
+
+.wrap-budget-card p {
+    font-size: 12px;
+    color: white;
+    padding: 0 10px 12px;
+}

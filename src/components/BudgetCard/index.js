@@ -9,7 +9,7 @@ import './BudgetCard.scss';
 const BudgetCard = ({type, style = {}, children}) =>
     <div className={`budget-card${type}`} style={style}>
         {children}
-    </div>;
+    </div>
 
 BudgetCard.propTypes = {
     type: PropTypes.string.isRequired,
