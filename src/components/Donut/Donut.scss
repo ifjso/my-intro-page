@@ -2,14 +2,14 @@
 author: Dval
 ----------------------------------------------------------*/
 
-$donut-size: 118px;
+@import '../Common.scss';
 
 .donut {
     position: absolute;
-    width: $donut-size;
-    height: $donut-size;
+    width: $donutSize;
+    height: $donutSize;
     background-image: url("../../images/w640/graph_0.png");
-    background-size: $donut-size $donut-size;
+    background-size: $donutSize $donutSize;
     top: 0;
     left: 0;
 }
