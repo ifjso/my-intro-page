@@ -2,8 +2,7 @@
 author: Dval
 ----------------------------------------------------------*/
 
-$half-donut-widths: 62px, 59px, 62px;
-$half-donut-heights: 122px, 116px, 122px;
+@import '../Common.scss';
 
 .wrap-half-donut {
 	position: absolute;
@@ -12,8 +11,8 @@ $half-donut-heights: 122px, 116px, 122px;
 
 .wrap-half-donut0 {
 	@extend .wrap-half-donut;
-	width: nth($half-donut-widths, 1);
-	height: nth($half-donut-heights, 1);
+	width: nth($halfDonutWidths, 1);
+	height: nth($halfDonutHeights, 1);
 	top: 0;
 	left: 0;
 }
@@ -21,8 +20,8 @@ $half-donut-heights: 122px, 116px, 122px;
 .wrap-half-donut1 {
 	@extend .wrap-half-donut;
 	top: 3px;
-	width: nth($half-donut-widths, 2);
-	height: nth($half-donut-heights, 2);
+	width: nth($halfDonutWidths, 2);
+	height: nth($halfDonutHeights, 2);
 	top: 0;
 	left: 0;
 }
@@ -30,8 +29,8 @@ $half-donut-heights: 122px, 116px, 122px;
 .wrap-half-donut2 {
 	@extend .wrap-half-donut;
 	top: 3px;
-	width: nth($half-donut-widths, 3);
-	height: nth($half-donut-heights, 3);
+	width: nth($halfDonutWidths, 3);
+	height: nth($halfDonutHeights, 3);
 	top: 0;
 	left: 0;
 }
@@ -42,58 +41,47 @@ $half-donut-heights: 122px, 116px, 122px;
 }
 
 .half-donut0 {
-	@extend .half-donut;
 	background-image: url('../../images/w640/graph_1.png');
-	background-size: nth($half-donut-widths, 1) nth($half-donut-heights, 1);
-	width: nth($half-donut-widths, 1);
-	height: nth($half-donut-heights, 1);
-	transform: rotate(-180deg);	
+	background-size: nth($halfDonutWidths, 1) nth($halfDonutHeights, 1);
+	width: nth($halfDonutWidths, 1);
+	height: nth($halfDonutHeights, 1);
+	transform: rotate(-180deg);
 }
 
 .half-donut1 {
-	@extend .half-donut;
 	background-image: url('../../images/w640/graph_2.png');
-	background-size: nth($half-donut-widths, 2) nth($half-donut-heights, 2);
-	width: nth($half-donut-widths, 2);
-	height: nth($half-donut-heights, 2);
+	background-size: nth($halfDonutWidths, 2) nth($halfDonutHeights, 2);
+	width: nth($halfDonutWidths, 2);
+	height: nth($halfDonutHeights, 2);
 	transform: rotate(-180deg);
 }
 
 .half-donut2 {
-	@extend .half-donut;
 	background-image: url('../../images/w640/graph_3.png');
-	background-size: nth($half-donut-widths, 3) nth($half-donut-heights, 3);
-	width: nth($half-donut-widths, 3);
-	height: nth($half-donut-heights, 3);
+	background-size: nth($halfDonutWidths, 3) nth($halfDonutHeights, 3);
+	width: nth($halfDonutWidths, 3);
+	height: nth($halfDonutHeights, 3);
 	transform: rotate(-180deg);
 }
 
-[data-aos="rotate-out-back"] {	
-	transition-property: none;
-	&.aos-animate {
-		animation: rotate-out-back 0.8s linear forwards 1;
-	}
+.half-donut0-rotate {
+	animation: rotate0 0.64s linear 1.7s 1 normal forwards;
 }
 
-[data-aos="rotate"] {	
-	transition-property: none;
-	&.aos-animate {
-		animation: rotate0 0.64s linear forwards 1;
-	}
+.half-donut1-rotate {
+	animation: rotate0 0.64s linear 2.34s 1 normal forwards;
 }
 
-[data-aos="rotate-delay0"] {	
-	transition-property: none;
-	&.aos-animate {
-		animation: rotate0 0.64s linear 0.64s forwards 1;
-	}
+.half-donut2-rotate {
+	animation: rotate1 0.18s linear 2.98s 1 normal forwards;	
 }
 
-[data-aos="rotate-delay1"] {	
-	transition-property: none;
-	&.aos-animate {
-		animation: rotate1 0.18s linear 1.28s forwards 1;
-	}
+.half-donut3-rotate {
+	animation: rotate0 0.64s linear forwards 1;	
+}
+
+.half-donut4-rotate {
+	animation: rotate-out-back 0.8s linear forwards 1;
 }
 
 @keyframes rotate-out-back {

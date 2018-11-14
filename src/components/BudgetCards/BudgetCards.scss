@@ -1,0 +1,24 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../Common.scss';
+
+.intro-budget {
+    overflow: hidden;
+}
+
+.wrap-budget-card {
+    position: relative;
+    width: $wrapBudgetCardWidth;
+    height: $wrapBudgetCardHeight;
+    left: 50%;
+    margin-left: -$wrapBudgetCardWidth / 2 - $budgetCardWidth;
+}
+
+[data-aos="swipe-card"] {
+    transition-property: transform;
+    &.aos-animate {
+       transform: translateX($budgetCardWidth);
+   } 
+}

@@ -1,3 +1,7 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
 import React, { Component } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -10,15 +14,12 @@ class App extends Component {
             once: true,
             easing: 'linear'
         });
-
-        // document.addEventListener('aos:in:graph-2', ({ detail }) => {
-        // console.log('animated in', detail);
-        // });
     }
 
     render() {
         return (
             <div className="App">
+                <div style={{height: 700}}></div>
                 <BudgetCards />
             </div>
         );

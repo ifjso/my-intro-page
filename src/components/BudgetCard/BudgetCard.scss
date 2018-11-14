@@ -2,8 +2,7 @@
 author: Dval
 ----------------------------------------------------------*/
 
-$budgetCardWidth: 250px;
-$budgetCardHeight: 172px;
+@import '../Common.scss';
 
 .budget-card {
     position: relative;
@@ -16,9 +15,16 @@ $budgetCardHeight: 172px;
 .budget-card0 {
     @extend .budget-card;
     background-image: url("../../images/w640/img_budget_bg.png");
+    margin-right: 2px;
 }
 
 .budget-card1 {
+    @extend .budget-card;
+    background-image: url("../../images/w640/img_budget_bg.png");
+    margin-right: 2px;
+}
+
+.budget-card2 {
     @extend .budget-card;
     background-image: url("../../images/w640/img_budget_bg.png");
 }
