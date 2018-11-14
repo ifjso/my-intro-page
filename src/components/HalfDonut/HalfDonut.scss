@@ -17,6 +17,14 @@ author: Dval
 	left: 0;
 }
 
+.wrap-half-donut00 {
+	@extend .wrap-half-donut;
+	width: nth($halfDonutWidths, 1);
+	height: nth($halfDonutHeights, 1);
+	top: 0;
+	left: 0;
+}
+
 .wrap-half-donut1 {
 	@extend .wrap-half-donut;
 	top: 3px;
@@ -48,6 +56,14 @@ author: Dval
 	transform: rotate(-180deg);
 }
 
+.half-donut00 {
+	background-image: url('../../images/w640/img_graph_orange.png');
+	background-size: nth($halfDonutWidths, 1) nth($halfDonutHeights, 1);
+	width: nth($halfDonutWidths, 1);
+	height: nth($halfDonutHeights, 1);
+	transform: rotate(-180deg);
+}
+
 .half-donut1 {
 	background-image: url('../../images/w640/img_graph_green.png');
 	background-size: nth($halfDonutWidths, 2) nth($halfDonutHeights, 2);
@@ -69,7 +85,7 @@ author: Dval
 }
 
 .half-donut1-rotate {
-	animation: rotate0 0.64s linear 2.34s 1 normal forwards;
+	animation: rotate02 1.28s linear 1.7s 1 normal forwards;
 }
 
 .half-donut2-rotate {
@@ -95,4 +111,9 @@ author: Dval
 
 @keyframes rotate1 {
 	100% { transform: rotate(-145deg); }
+}
+
+@keyframes rotate02 {
+	50% { transform: rotate(-180deg); }
+	100% { transform: rotate(0deg); }
 }

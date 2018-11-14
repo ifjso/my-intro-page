@@ -32,15 +32,15 @@ const BudgetCards = () => {
                     <Donut style={{top: 22, left: 20}}/>
                     <HalfDonut
                         type={halfDonutType.HALF_DONUT_0}
-                        style={{top: 24, left: 84}}
+                        style={{top: 22, left: 83}}
                     />
                     <HalfDonut
-                        type={halfDonutType.HALF_DONUT_0}
-                        style={{top: 24, left: 24, transform: 'rotate(180deg)'}}
+                        type={halfDonutType.HALF_DONUT_00}
+                        style={{top: 22, left: 20, transform: 'rotate(180deg)'}}
                     />
                     <HalfDonut 
                         type={halfDonutType.HALF_DONUT_2} 
-                        style={{top: 23, left: 84}}
+                        style={{top: 22, left: 83}}
                     />
                 </BudgetCard>
 
@@ -48,11 +48,11 @@ const BudgetCards = () => {
                     <Donut style={{top: 22, left: 20}}/>
                     <HalfDonut 
                         type={halfDonutType.HALF_DONUT_1} 
-                        style={{top: 28, left: 84}}
+                        style={{top: 22, left: 83}}
                     />
                     <HalfDonut
                         type={halfDonutType.HALF_DONUT_0}
-                        style={{top: 24, left: 84}}
+                        style={{top: 22, left: 83}}
                     />
                 </BudgetCard>
             </div>
