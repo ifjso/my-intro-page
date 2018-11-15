@@ -5,6 +5,7 @@ author: Dval
 import React, { Component } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import TodayIntro from './components/TodayIntro';
 import BudgetIntro from './components/BudgetIntro';
 import './App.scss';
 
@@ -19,6 +20,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <TodayIntro />
                 <div style={{height: 700}}></div>
                 <BudgetIntro />
             </div>
