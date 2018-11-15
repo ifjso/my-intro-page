@@ -42,6 +42,6 @@ const BudgetCards = () => {
     );
 }
 
-const budgetStyle = { top: 22, left: 83 };
+const budgetStyle = { top: 23, left: 83 };
 
 export default BudgetCards;
