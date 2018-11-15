@@ -2,15 +2,18 @@
 author: Dval
 ----------------------------------------------------------*/
 
-.wrap-budget-card {
+.budget-intro {
     position: relative;
-    width: $budgetCardWidth;
-    height: $wrapBudgetCardHeight;
-    float: left;
+    overflow: hidden;
+    margin-bottom: 70px;
 }
 
-.wrap-budget-card p {
-    font-size: 12px;
+.budget-intro > p {
+    padding-bottom: 46px;
+    line-height: 32px;
     color: white;
-    padding: 0 10px 12px;
+}
+
+.budget-intro p > strong {
+    font-size: 20px;
 }

@@ -4,10 +4,12 @@ author: Dval
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import BudgetDate from '../BudgetDate';
 import './BudgetCard.scss';
 
-const BudgetCard = ({type, style = {}, children}) =>
+const BudgetCard = ({type, style = {}, dateText, children}) =>
     <div className={`budget-card${type}`} style={style}>
+        <BudgetDate dateText={dateText} />
         {children}
     </div>
 
@@ -17,6 +19,7 @@ BudgetCard.propTypes = {
         top: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         left: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     }),
+    dateText: PropTypes.string.isRequired,
     children: PropTypes.array
 }
 

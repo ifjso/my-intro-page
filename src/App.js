@@ -5,7 +5,7 @@ author: Dval
 import React, { Component } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import BudgetCards from './components/BudgetCards';
+import BudgetIntro from './components/BudgetIntro';
 import './App.scss';
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
         return (
             <div className="App">
                 <div style={{height: 700}}></div>
-                <BudgetCards />
+                <BudgetIntro />
             </div>
         );
     }

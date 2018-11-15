@@ -1,0 +1,17 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../Common.scss';
+
+.budget-date {
+    position: relative;
+    width: $budgetCardWidth;    
+    top: -26px;
+}
+
+.budget-date p {
+    font-size: 12px;
+    color: white;
+    padding: 0 10px 12px;
+}
