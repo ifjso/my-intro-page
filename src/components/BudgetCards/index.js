@@ -25,39 +25,25 @@ const BudgetCards = () => {
                 data-aos-anchor-placement="top-bottom"                
                 data-aos-delay="900"
                 data-aos-duration="800">
-
                 <BudgetCard type={budgetCardType.BUDGET_CARD_0} />
 
                 <BudgetCard type={budgetCardType.BUDGET_CARD_1}>
-                    <Donut style={{top: 22, left: 20}}/>
-                    <HalfDonut
-                        type={halfDonutType.HALF_DONUT_0}
-                        style={{top: 22, left: 83}}
-                    />
-                    <HalfDonut
-                        type={halfDonutType.HALF_DONUT_00}
-                        style={{top: 22, left: 20, transform: 'rotate(180deg)'}}
-                    />
-                    <HalfDonut 
-                        type={halfDonutType.HALF_DONUT_2} 
-                        style={{top: 22, left: 83}}
-                    />
+                    <Donut style={{...budgetStyle, left: 20}} />
+                    <HalfDonut type={halfDonutType.HALF_DONUT_0} style={budgetStyle} />
+                    <HalfDonut type={halfDonutType.HALF_DONUT_0} style={{...budgetStyle, left: 20, transform: 'rotate(180deg)'}} />
+                    <HalfDonut type={halfDonutType.HALF_DONUT_2} style={budgetStyle} />
                 </BudgetCard>
 
                 <BudgetCard type={budgetCardType.BUDGET_CARD_2}>
-                    <Donut style={{top: 22, left: 20}}/>
-                    <HalfDonut 
-                        type={halfDonutType.HALF_DONUT_1} 
-                        style={{top: 22, left: 83}}
-                    />
-                    <HalfDonut
-                        type={halfDonutType.HALF_DONUT_0}
-                        style={{top: 22, left: 83}}
-                    />
+                    <Donut style={{...budgetStyle, left: 20}} />
+                    <HalfDonut type={halfDonutType.HALF_DONUT_1} style={budgetStyle} />
+                    <HalfDonut type={halfDonutType.HALF_DONUT_0} style={budgetStyle} />
                 </BudgetCard>
             </div>
         </div>
     );
 }
+
+const budgetStyle = { top: 22, left: 83 };
 
 export default BudgetCards;

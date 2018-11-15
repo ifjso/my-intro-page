@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import './HalfDonut.scss';
 
 const HalfDonut = ({type, style = {}}) =>
-    <div className={`wrap-half-donut${type}`} style={style}>
+    <div className="wrap-half-donut" style={style}>
         <div className={`half-donut half-donut${type}`} />
     </div>;
 

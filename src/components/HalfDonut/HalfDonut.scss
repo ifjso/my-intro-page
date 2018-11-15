@@ -7,77 +7,31 @@ author: Dval
 .wrap-half-donut {
 	position: absolute;
 	overflow: hidden;
-}
-
-.wrap-half-donut0 {
-	@extend .wrap-half-donut;
-	width: nth($halfDonutWidths, 1);
-	height: nth($halfDonutHeights, 1);
-	top: 0;
-	left: 0;
-}
-
-.wrap-half-donut00 {
-	@extend .wrap-half-donut;
-	width: nth($halfDonutWidths, 1);
-	height: nth($halfDonutHeights, 1);
-	top: 0;
-	left: 0;
-}
-
-.wrap-half-donut1 {
-	@extend .wrap-half-donut;
-	top: 3px;
-	width: nth($halfDonutWidths, 2);
-	height: nth($halfDonutHeights, 2);
-	top: 0;
-	left: 0;
-}
-
-.wrap-half-donut2 {
-	@extend .wrap-half-donut;
-	top: 3px;
-	width: nth($halfDonutWidths, 3);
-	height: nth($halfDonutHeights, 3);
+	width: $halfDonutWidth;
+	height: $halfDonutHeight;
 	top: 0;
 	left: 0;
 }
 
 .half-donut {
 	position: absolute;
+	background-size: $halfDonutWidth $halfDonutHeight;
+	width: $halfDonutWidth;
+	height: $halfDonutHeight;
+	transform: rotate(-180deg);
 	transform-origin: 0% 50%;
 }
 
 .half-donut0 {
 	background-image: url('../../images/w640/img_graph_orange.png');
-	background-size: nth($halfDonutWidths, 1) nth($halfDonutHeights, 1);
-	width: nth($halfDonutWidths, 1);
-	height: nth($halfDonutHeights, 1);
-	transform: rotate(-180deg);
-}
-
-.half-donut00 {
-	background-image: url('../../images/w640/img_graph_orange.png');
-	background-size: nth($halfDonutWidths, 1) nth($halfDonutHeights, 1);
-	width: nth($halfDonutWidths, 1);
-	height: nth($halfDonutHeights, 1);
-	transform: rotate(-180deg);
 }
 
 .half-donut1 {
 	background-image: url('../../images/w640/img_graph_green.png');
-	background-size: nth($halfDonutWidths, 2) nth($halfDonutHeights, 2);
-	width: nth($halfDonutWidths, 2);
-	height: nth($halfDonutHeights, 2);
-	transform: rotate(-180deg);
 }
 
 .half-donut2 {
 	background-image: url('../../images/w640/img_graph_red.png');
-	background-size: nth($halfDonutWidths, 3) nth($halfDonutHeights, 3);
-	width: nth($halfDonutWidths, 3);
-	height: nth($halfDonutHeights, 3);
-	transform: rotate(-180deg);
 }
 
 .half-donut0-rotate {
@@ -85,7 +39,7 @@ author: Dval
 }
 
 .half-donut1-rotate {
-	animation: rotate02 1.28s linear 1.7s 1 normal forwards;
+	animation: rotate2 1.28s linear 1.7s 1 normal forwards;
 }
 
 .half-donut2-rotate {
@@ -113,7 +67,7 @@ author: Dval
 	100% { transform: rotate(-145deg); }
 }
 
-@keyframes rotate02 {
+@keyframes rotate2 {
 	50% { transform: rotate(-180deg); }
 	100% { transform: rotate(0deg); }
 }
