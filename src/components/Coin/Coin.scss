@@ -1,0 +1,23 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../Common.scss';
+
+.coin {
+    position: absolute;
+    width: $coinWidth;
+    height: $coinHeight;
+}
+
+.coin-white {
+    @extend .coin;
+    background: url('../../images/w640/img_coin_white.png') no-repeat;
+    background-size: $coinWidth $coinHeight;
+}
+
+.coin-orange {
+    @extend .coin;
+    background: url('../../images/w640/img_coin_orange.png') no-repeat;
+    background-size: $coinWidth $coinHeight;
+}
