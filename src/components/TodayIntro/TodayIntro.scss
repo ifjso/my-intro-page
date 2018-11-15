@@ -1,0 +1,28 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../Common.scss';
+
+.wrap-today-phone {
+    width: $todayPhoneWidth;
+    margin: 0 auto;
+}
+
+.today-intro > p {
+    font-size: 20px;
+    line-height: 42px;
+    padding-top: 24px;
+    padding-bottom: 4px;
+}
+
+.today-intro > p > strong {
+    font-size: 28px;
+}
+
+.today-phone {
+    background: url(../../images/w640/img_today.png) no-repeat;
+    background-size: 200px 372px;
+    width: 200px;
+    height: 372px;
+}
