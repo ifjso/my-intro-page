@@ -23,7 +23,7 @@ BudgetCard.propTypes = {
     children: PropTypes.array
 }
 
-export const budgetCardType = {
+export const BudgetCardType = {
     BUDGET_CARD_0: '0',
     BUDGET_CARD_1: '1',
     BUDGET_CARD_2: '2'
