@@ -3,25 +3,24 @@ author: Dval
 ----------------------------------------------------------*/
 
 import React from 'react';
-import PropTypes from 'prop-types';
-import Coin from '../Coin';
+import Coin, { CoinType } from '../Coin';
 import './Coins.scss';
 
-const Coins = ({count = 5, side = sideType.SIDE_TYPE_LEFT}) =>
-    <div className={`coins-${side}`}>
-        {[...Array(count)].map((coin, i) =>  <Coin key={i} top={offsetTop * (5 - i)} />)}
+const Coins = () =>
+    <div className="coins">
+        <Coin top={coinInterval * 5} />
+        <Coin top={coinInterval * 4} />
+        <Coin top={coinInterval * 3} />
+        <Coin top={coinInterval * 2} />
+        <Coin top={coinInterval} />
+
+        <Coin type={CoinType.COIN_RIGHT} top={coinInterval * 5} />
+        <Coin type={CoinType.COIN_RIGHT} top={coinInterval * 4} />
+        <Coin type={CoinType.COIN_RIGHT} top={coinInterval * 3} />
+        <Coin type={CoinType.COIN_RIGHT} top={coinInterval * 2} />
+        <Coin type={CoinType.COIN_RIGHT} top={coinInterval} />
     </div>;
 
-const offsetTop = 17;
-
-Coins.propTypes = {
-    count: PropTypes.number,
-    side: PropTypes.string
-}
-
-export const sideType = {
-    SIDE_TYPE_LEFT: 'left',
-    SIDE_TYPE_RIGHT: 'right'
-}
+const coinInterval = 17;
 
 export default Coins;

@@ -3,12 +3,12 @@ author: Dval
 ----------------------------------------------------------*/
 
 import React from 'react';
-import DoubleCoins from '../DoubleCoins';
+import Coins from '../Coins';
 import './TodayBudgetIntro.scss';
 
 const TodayBudgetIntro = () =>
     <div className="today-budget-intro">
-        <DoubleCoins />
+        <Coins />
     </div>;
 
 export default TodayBudgetIntro;

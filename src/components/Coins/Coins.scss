@@ -5,19 +5,8 @@ author: Dval
 @import '../Common.scss';
 
 .coins {
-    position: absolute;
-    width: 50px;
+    position: relative;
+    width: 160px;
     height: 106px;
-}
-
-.coins-left {
-    @extend .coins;
-    left: 50%;
-    margin-left: -$coinWidth - 30px;
-}
-
-.coins-right {
-    @extend .coins;
-    right: 50%;
-    margin-right: -$coinWidth - 30px;
+    margin: 0 auto;
 }
