@@ -5,3 +5,10 @@ author: Dval
 .align-center {
     text-align: center;
 }
+
+[data-aos="d-fade-out"] {
+    transition-property: opacity;
+    &.aos-animate {
+        opacity: 0;
+    }
+}

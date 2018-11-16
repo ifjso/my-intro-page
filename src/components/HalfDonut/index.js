@@ -22,7 +22,6 @@ HalfDonut.propTypes = {
 
 export const HalfDonutType = {    
     HALF_DONUT_0: '0',
-    HALF_DONUT_00: '00',
     HALF_DONUT_1: '1',
     HALF_DONUT_2: '2',
 };

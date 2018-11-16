@@ -2,11 +2,41 @@
 author: Dval
 ----------------------------------------------------------*/
 
-@import '../Common.scss';
+@import '../common';
 
-.coins {
+.wrap-coin {
     position: relative;
     width: 160px;
     height: 106px;
     margin: 0 auto;
+}
+
+.coin-box {
+    position: absolute;
+    width: 50px;
+    height: 106px;
+}
+
+.coin-box-left {
+    left: 50%;
+    margin-left: -$coinWidth - 30px;
+}
+
+.coin-box-right {
+    right: 50%;
+    margin-right: -$coinWidth - 30px;
+}
+
+[data-aos="coin-box-slide-up"] {
+    transition-property: transform;
+    &.aos-animate {
+        transform: translateY(-17px);
+    }
+}
+
+[data-aos="coin-box-slide-down"] {
+    transition-property: transform;
+    &.aos-animate {
+        transform: translateY(17px);
+    }
 }
