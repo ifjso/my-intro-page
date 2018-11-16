@@ -1,0 +1,30 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../common';
+
+.one-day-intro {
+    position: relative;
+    margin-bottom: 80px;   
+    height: 600px;
+}
+
+.one-day-intro-box {
+    z-index: -10;
+    position: absolute;
+    width: 262px;
+    height: 168px;
+    top: 24px;
+    left: 50%;
+    margin-left: -$today-budget-intro-box-width / 2;
+    border-radius: 4px;
+    background-color: #ffaf6d;
+}
+
+[data-aos="one-day-intro-box-slide-down"] {
+    transition-property: transform;
+    &.aos-animate {
+        transform: translateY(168px);
+    }
+}

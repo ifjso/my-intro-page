@@ -10,16 +10,21 @@ const Coin = ({ top = 0, outCoinAos = { delay: 1000, duration: 300 }, inCoinAos 
     <div className="coin"
         style={{top}}
         data-aos={outCoinAos.type}
+        data-aos-anchor="#one-day-intro-box"
+        data-aos-anchor-placement="top-bottom"
         data-aos-delay={outCoinAos.delay || 1000}
         data-aos-duration={outCoinAos.duration || 300}>
 
         <div className="coin-white"
             data-aos={inCoinAos.whiteType}
+            data-aos-anchor="#one-day-intro-box"
             data-aos-anchor-placement="top-bottom"
             data-aos-delay={inCoinAos.delay || 0}
             data-aos-duration={inCoinAos.duration || 50} />
+
         <div className="coin-orange"
             data-aos={inCoinAos.orangeType}
+            data-aos-anchor="#one-day-intro-box"
             data-aos-anchor-placement="top-bottom"
             data-aos-delay={inCoinAos.delay || 0}
             data-aos-duration={inCoinAos.duration || 50} />
