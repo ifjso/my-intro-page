@@ -1,0 +1,16 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../common';
+
+.coin-box-title {
+    position: absolute;
+    top: 112px;
+    width: $coinWidth;
+}
+
+.coin-box-title > p {
+    font-size: 13px;
+    font-weight: bold;
+}

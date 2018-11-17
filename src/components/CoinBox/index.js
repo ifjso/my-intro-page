@@ -5,10 +5,12 @@ author: Dval
 import React from 'react';
 import PropTypes from 'prop-types';
 import Coin from '../Coin';
+import CoinBoxTitle from '../CoinBoxTitle';
 import './CoinBox.scss';
 
 const CoinBox = ({
     type = CoinBoxType.COIN_BOX_LEFT,
+    title,
     count = 1,
     calcTop = () => 0,
     useBoxAos = true,
@@ -32,26 +34,36 @@ const CoinBox = ({
             'data-aos-duration': 300
         };
     }
+    
+    let coinBoxTitle;
+
+    if (title) {
+        coinBoxTitle = <CoinBoxTitle text={title} />;
+    }
 
     return (
-        <div className={`coin-box coin-box-${type}`} {...boxAosOpts}>
-            {[...Array(count)].map((n, i) =>
-                <Coin key={i} 
-                    top={calcTop(i)}
-                    useOuterAos = {useOuterCoinAos}
-                    useInnerAos = {useInnerCoinAos}
-                    outerAosType = {outerCoinAosType}
-                    outerAosDelay = {outerCoinAosDelay}
-                    innerAosDelay = {calcInnerCoinAosDelay(i)}
-                    innerAosDuration = {innerCoinAosDuration}
-                />
-            )}
+        <div className={`coin-box coin-box-${type}`}>
+            <div className="wrap-coin" {...boxAosOpts}>
+                {[...Array(count)].map((n, i) =>
+                    <Coin key={i} 
+                        top={calcTop(i)}
+                        useOuterAos = {useOuterCoinAos}
+                        useInnerAos = {useInnerCoinAos}
+                        outerAosType = {outerCoinAosType}
+                        outerAosDelay = {outerCoinAosDelay}
+                        innerAosDelay = {calcInnerCoinAosDelay(i)}
+                        innerAosDuration = {innerCoinAosDuration}
+                    />
+                )}
+            </div>
+            {coinBoxTitle}
         </div>
     );
 };
 
 CoinBox.propTypes = {
     type: PropTypes.string,
+    title: PropTypes.string,
     count: PropTypes.number,
     calcTop: PropTypes.func,
     useBoxAos: PropTypes.bool,

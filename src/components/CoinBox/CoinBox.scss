@@ -6,8 +6,8 @@ author: Dval
 
 .coin-box {
     position: absolute;
-    width: 50px;
-    height: 106px;
+    width: $coinWidth;
+    height: 144px;
 }
 
 .coin-box-left {
@@ -18,6 +18,12 @@ author: Dval
 .coin-box-right {
     right: 50%;
     margin-right: -$coinWidth - 30px;
+}
+
+.wrap-coin {
+    position: absolute;
+    width: $coinWidth;
+    height: 106px;
 }
 
 [data-aos="coin-box-slide-up"] {

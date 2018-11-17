@@ -14,14 +14,16 @@ const OneDayCoins = () =>
                 useOuterCoinAos={true}
                 outerCoinAosType="coin-slide-right"
             />
-            <CoinBox count={4}
+            <CoinBox title="오늘 소비"
+                count={4}
                 calcTop={calcTop(4)}
                 boxAosType="coin-box-slide-down"
                 boxAosDelay={1000}
                 useInnerCoinAos={true}
                 calcInnerCoinAosDelay={calcDelay(3)}
             />
-            <CoinBox type={CoinBoxType.COIN_BOX_RIGHT}
+            <CoinBox title="내일 예산"
+                type={CoinBoxType.COIN_BOX_RIGHT}
                 count={5}
                 calcTop={calcTop(5)}
                 boxAosDelay={1000}
@@ -38,13 +40,15 @@ const OneDayCoins = () =>
                 calcInnerCoinAosDelay={calcDelay(6, bottomCoinBoxAosDelayOffset)}
                 innerCoinAosDuration={300}
             />
-            <CoinBox count={5}
+            <CoinBox title="오늘 소비"
+                count={5}
                 calcTop={calcTop(5)} 
                 boxAosDelay={3700}
                 useInnerCoinAos={true}
                 calcInnerCoinAosDelay={calcDelay(4, bottomCoinBoxAosDelayOffset)}
             />
             <CoinBox type={CoinBoxType.COIN_BOX_RIGHT}
+                title="내일 예산"
                 count={4}
                 calcTop={calcTop(4)}
                 boxAosType="coin-box-slide-down"
