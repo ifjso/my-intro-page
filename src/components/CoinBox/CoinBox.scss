@@ -6,23 +6,23 @@ author: Dval
 
 .coin-box {
     position: absolute;
-    width: $coinWidth;
-    height: $wrapCoinBoxHeight;
+    width: $coinBoxWidth;
+    height: $coinBoxHeight;
 }
 
 .coin-box-left {
     left: 50%;
-    margin-left: -$coinWidth - 30px;
+    margin-left: -$coinBoxWidth - 30px + ($coinBoxWidth - $coinWidth) / 2;
 }
 
 .coin-box-right {
     right: 50%;
-    margin-right: -$coinWidth - 30px;
+    margin-right: -$coinBoxWidth - 30px + ($coinBoxWidth - $coinWidth) / 2;
 }
 
 .wrap-coin {
-    position: absolute;
-    width: $coinWidth;
+    position: relative;
+    width: $wrapCoinWidth;
     height: $wrapCoinHeight;
 }
 

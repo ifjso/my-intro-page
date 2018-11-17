@@ -20,7 +20,10 @@ $today-budget-intro-box-width: 262px;
 $coinWidth: 50px;
 $coinHeight: 20px;
 
+$wrapCoinWidth: $coinWidth + 10px;
 $wrapCoinHeight: 106px;
-$wrapCoinBoxWidth: $coinWidth * 2 + 60px;
-$wrapCoinBoxHeight: $wrapCoinHeight + 38px;
-$oneDayCoinsHeight: $wrapCoinBoxHeight * 2 + 24px
+$coinBoxWidth: $wrapCoinWidth;
+$coinBoxHeight: $wrapCoinHeight + 38px;
+$wrapCoinBoxWidth: $coinBoxWidth * 2 + 60px;
+$wrapCoinBoxHeight: $coinBoxHeight;
+$oneDayCoinsHeight: $coinBoxHeight * 2 + 24px

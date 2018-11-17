@@ -6,6 +6,8 @@ author: Dval
 
 .coin {
     position: absolute;
+    left: 50%;
+    margin-left: -$coinWidth / 2;
     width: $coinWidth;
     height: $coinHeight;
 }
