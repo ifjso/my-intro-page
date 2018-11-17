@@ -13,6 +13,6 @@ const BudgetDate = ({dateText}) =>
 
 BudgetDate.propTypes = {
     dateText: PropTypes.string
-}
+};
 
 export default BudgetDate;

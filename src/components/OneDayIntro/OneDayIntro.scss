@@ -22,6 +22,13 @@ author: Dval
     background-color: #ffaf6d;
 }
 
+.wrap-coin {
+    position: relative;
+    width: 160px;
+    height: 106px;
+    margin: 0 auto;
+}
+
 [data-aos="one-day-intro-box-slide-down"] {
     transition-property: transform;
     &.aos-animate {

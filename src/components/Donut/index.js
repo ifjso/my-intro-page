@@ -6,14 +6,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Donut.scss';
 
-const Donut = ({style = {top: 23, left: 20}}) =>
-    <div className="donut" style={style}></div>;
+const Donut = ({top = 23, left = 20}) =>
+    <div className="donut" style={{top, left}}></div>;
 
 Donut.propTypes = {
-    style: PropTypes.shape({
-        top: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-        left: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    })
-}
+    top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    left: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+};
 
 export default Donut;

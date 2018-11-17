@@ -17,20 +17,23 @@ const BudgetCards = () => {
         });
     });
 
+    const commonAosOpts = {
+        'data-aos': 'swipe-card',
+        'data-aos-id': 'swipe-card',
+        'data-aos-easing': 'ease-in-out',
+        'data-aos-anchor-placement': 'top-bottom',
+        'data-aos-delay': '900',
+        'data-aos-duration': '800'
+    };
+
     return (
-        <div className="wrap-budget-cards"
-            data-aos="swipe-card"
-            data-aos-id="swipe-card"
-            data-aos-easing="ease-in-out" 
-            data-aos-anchor-placement="top-bottom"                
-            data-aos-delay="900"
-            data-aos-duration="800">
+        <div className="wrap-budget-cards" {...commonAosOpts} >
             <BudgetCard type={BudgetCardType.BUDGET_CARD_0} dateText="2018년 7월 25일 ~ 2018년 8월 24일" />
 
             <BudgetCard type={BudgetCardType.BUDGET_CARD_1} dateText="2018년 8월 25일 ~ 2018년 9월 24일">
                 <Donut />
                 <HalfDonut type={HalfDonutType.HALF_DONUT_0} />
-                <HalfDonut type={HalfDonutType.HALF_DONUT_0} style={{left: 20, transform: 'rotate(180deg)'}} />
+                <HalfDonut type={HalfDonutType.HALF_DONUT_0} left={20} transform="rotate(180deg)" />
                 <HalfDonut type={HalfDonutType.HALF_DONUT_2} />
             </BudgetCard>
 
@@ -41,6 +44,6 @@ const BudgetCards = () => {
             </BudgetCard>
         </div>
     );
-}
+};
 
 export default BudgetCards;

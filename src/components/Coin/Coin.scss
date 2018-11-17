@@ -27,6 +27,13 @@ author: Dval
     opacity: 0;
 }
 
+[data-aos="coin-slide-left"] {
+    transition-property: transform;
+    &.aos-animate {
+        transform: translateX(-110px);
+    }
+}
+
 [data-aos="coin-slide-right"] {
     transition-property: transform;
     &.aos-animate {

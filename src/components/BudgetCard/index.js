@@ -11,17 +11,13 @@ const BudgetCard = ({type, dateText, children}) =>
     <div className={`budget-card${type}`}>
         <BudgetDate dateText={dateText} />
         {children}
-    </div>
+    </div>;
 
 BudgetCard.propTypes = {
     type: PropTypes.string.isRequired,
-    style: PropTypes.shape({
-        top: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-        left: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    }),
     dateText: PropTypes.string.isRequired,
     children: PropTypes.array
-}
+};
 
 export const BudgetCardType = {
     BUDGET_CARD_0: '0',
