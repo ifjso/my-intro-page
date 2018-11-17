@@ -6,39 +6,50 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Coin.scss';
 
-const Coin = ({ top = 0, outCoinAos = { delay: 1000, duration: 300 }, inCoinAos = { delay: 0, duration: 50 } }) =>
-    <div className="coin"
-        style={{top}}
-        data-aos={outCoinAos.type}
-        data-aos-anchor="#one-day-intro-box"
-        data-aos-anchor-placement="top-bottom"
-        data-aos-delay={outCoinAos.delay || 1000}
-        data-aos-duration={outCoinAos.duration || 300}>
+const Coin = ({top = 0, outerAos = {delay: 1000, duration: 300}, innerAos = {delay: 0, duration: 50}}) => {
+    outerAos.delay = outerAos.delay || 1000;
+    outerAos.duration = outerAos.duration || 300;
+    innerAos.delay = innerAos.delay || 0;
+    innerAos.duration = innerAos.duration || 50;
 
-        <div className="coin-white"
-            data-aos={inCoinAos.whiteType}
-            data-aos-anchor="#one-day-intro-box"
-            data-aos-anchor-placement="top-bottom"
-            data-aos-delay={inCoinAos.delay || 0}
-            data-aos-duration={inCoinAos.duration || 50} />
+    return (
+        <div className="coin"
+            data-aos={outerAos.type}
+            data-aos-anchor={commonAnchor}
+            data-aos-anchor-placement={commonAnchorPlacement}
+            data-aos-delay={outerAos.delay}
+            data-aos-duration={outerAos.duration}
+            style={{top}}>
 
-        <div className="coin-orange"
-            data-aos={inCoinAos.orangeType}
-            data-aos-anchor="#one-day-intro-box"
-            data-aos-anchor-placement="top-bottom"
-            data-aos-delay={inCoinAos.delay || 0}
-            data-aos-duration={inCoinAos.duration || 50} />
-    </div>;
+            <div className="coin-white"
+                data-aos={innerAos.whiteType}
+                data-aos-anchor={commonAnchor}
+                data-aos-anchor-placement={commonAnchorPlacement}
+                data-aos-delay={innerAos.delay}
+                data-aos-duration={innerAos.duration} />
+
+            <div className="coin-orange"
+                data-aos={innerAos.orangeType}
+                data-aos-anchor={commonAnchor}
+                data-aos-anchor-placement={commonAnchorPlacement}
+                data-aos-delay={innerAos.delay}
+                data-aos-duration={innerAos.duration} />
+        </div>
+    );
+}
+
+const commonAnchor = '#one-day-intro-box';
+const commonAnchorPlacement = 'top-bottom';
 
 Coin.propTypes = {
     type: PropTypes.string,
     top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    outCoinAos: PropTypes.shape({
+    outerAos: PropTypes.shape({
         type: PropTypes.string,
         delay: PropTypes.number,
         duration: PropTypes.number
     }),
-    inCoinAos: PropTypes.shape({
+    innerAos: PropTypes.shape({
         whiteType: PropTypes.string,
         orangeType: PropTypes.string,
         delay: PropTypes.number,

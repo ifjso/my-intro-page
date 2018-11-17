@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 import Coin from '../Coin';
 import './Coins.scss';
 
-const Coins = ({ top }) =>
+const Coins = ({top}) =>
     <div className="wrap-coin" style={{top}}>
         {/* coin box direction type */}
         <div className="coin-box coin-box-left">
-            <Coin top={coinInterval * 5} outCoinAos={{type: 'coin-slide-right'}} />
+            <Coin top={coinInterval * 5} outerAos={{type: 'coin-slide-right'}} />
         </div>
 
         {/* coinFadeDelayOffset */}
@@ -23,10 +23,10 @@ const Coins = ({ top }) =>
             data-aos-anchor-placement="top-bottom"
             data-aos-delay="1000"
             data-aos-duration="300">
-            <Coin top={coinInterval * 4} inCoinAos={{...coinFade, delay: coinFadeDelayInterval * 3}} />
-            <Coin top={coinInterval * 3} inCoinAos={{...coinFade, delay: coinFadeDelayInterval * 2}} />
-            <Coin top={coinInterval * 2} inCoinAos={{...coinFade, delay: coinFadeDelayInterval}} />
-            <Coin top={coinInterval} inCoinAos={coinFade} />
+            <Coin top={coinInterval * 4} innerAos={{...coinFade, delay: coinFadeDelayInterval * 3}} />
+            <Coin top={coinInterval * 3} innerAos={{...coinFade, delay: coinFadeDelayInterval * 2}} />
+            <Coin top={coinInterval * 2} innerAos={{...coinFade, delay: coinFadeDelayInterval}} />
+            <Coin top={coinInterval} innerAos={coinFade} />
         </div>
 
         <div className="coin-box coin-box-right"

@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 import BudgetDate from '../BudgetDate';
 import './BudgetCard.scss';
 
-const BudgetCard = ({type, style = {}, dateText, children}) =>
-    <div className={`budget-card${type}`} style={style}>
+const BudgetCard = ({type, dateText, children}) =>
+    <div className={`budget-card${type}`}>
         <BudgetDate dateText={dateText} />
         {children}
     </div>

@@ -11,7 +11,7 @@ const OneDayIntro = () =>
         <div className="one-day-intro-box"
             id="one-day-intro-box"
             data-aos="one-day-intro-box-slide-down"
-            data-aos-anchor-placement="top botoom"
+            data-aos-anchor-placement="top-bottom"
             data-aos-delay="2400" />
         <Coins top={46} />
         <Coins top={108} />
