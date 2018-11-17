@@ -30,7 +30,7 @@ const OneDayCoins = () =>
             />
         </div>
 
-        <div className="wrap-coin-box" style={{top: 62}}>
+        <div className="wrap-coin-box" style={{top: 24}}>
             <CoinBox type={CoinBoxType.COIN_BOX_RIGHT}
                 calcTop={calcTop(5)}
                 useBoxAos={false}

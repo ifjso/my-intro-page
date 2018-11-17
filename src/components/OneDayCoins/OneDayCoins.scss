@@ -2,17 +2,19 @@
 author: Dval
 ----------------------------------------------------------*/
 
+@import '../common';
+
 .one-day-coins {
     position: relative;
     top: 38px;
-    width: 160px;
-    height: 274px;
+    width: $wrapCoinBoxWidth;
+    height: $oneDayCoinsHeight;
     margin: 0 auto;
 }
 
 .wrap-coin-box {
     position: relative;
-    width: 160px;
-    height: 106px;
+    width: $wrapCoinBoxWidth;
+    height: $wrapCoinBoxHeight;
     margin: 0 auto;
 }

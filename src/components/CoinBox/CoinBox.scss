@@ -7,7 +7,7 @@ author: Dval
 .coin-box {
     position: absolute;
     width: $coinWidth;
-    height: 144px;
+    height: $wrapCoinBoxHeight;
 }
 
 .coin-box-left {
@@ -23,7 +23,7 @@ author: Dval
 .wrap-coin {
     position: absolute;
     width: $coinWidth;
-    height: 106px;
+    height: $wrapCoinHeight;
 }
 
 [data-aos="coin-box-slide-up"] {
