@@ -8,7 +8,7 @@ import BudgetDate from '../BudgetDate';
 import './BudgetCard.scss';
 
 const BudgetCard = ({type, dateText, children}) =>
-    <div className={`budget-card${type}`}>
+    <div className={`budget-card img-budget-card${type}`}>
         <BudgetDate dateText={dateText} />
         {children}
     </div>;

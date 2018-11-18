@@ -2,28 +2,36 @@
 author: Dval
 ----------------------------------------------------------*/
 
-$donutSize: 126px;
+$imgDonutWidth: 126px;
 
-$halfDonutWidth: 63px;
-$halfDonutHeight: 126px;
+$imgHalfDonutWidth: 63px;
+$imgHalfDonutHeight: 126px;
 
-$budgetCardWidth: 250px;
-$budgetCardHeight: 172px;
+$imgBudgetCardWidth: 250px;
+$imgBudgetCardHeight: 172px;
 
 $wrapBudgetCardWidth: 754px;
 $wrapBudgetCardHeight: 172px;
 
-$todayPhoneWidth: 200px;
+$imgTodayPhoneWidth: 200px;
+$imgTodayPhoneHeight: 372px;
 
-$today-budget-intro-box-width: 262px;
+$todayBudgetIntroBoxWidth: 262px;
+$todayBudgetIntroBoxHeight: 168px;
 
-$coinWidth: 50px;
-$coinHeight: 20px;
+$imgCoinWidth: 50px;
+$imgCoinHeight: 20px;
 
-$wrapCoinWidth: $coinWidth + 10px;
+$wrapCoinWidth: $imgCoinWidth + 10px;
 $wrapCoinHeight: 106px;
+
 $coinBoxWidth: $wrapCoinWidth;
 $coinBoxHeight: $wrapCoinHeight + 38px;
+
 $wrapCoinBoxWidth: $coinBoxWidth * 2 + 60px;
 $wrapCoinBoxHeight: $coinBoxHeight;
-$oneDayCoinsHeight: $coinBoxHeight * 2 + 24px
+
+$oneDayCoinsHeight: $coinBoxHeight * 2 + 24px;
+
+$imgBudgetSettingPhoneWidth: 260px;
+$imgBudgetSettingPhoneHeight: 318px;

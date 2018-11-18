@@ -4,11 +4,6 @@ author: Dval
 
 @import '../common';
 
-.wrap-today-phone {
-    width: $todayPhoneWidth;
-    margin: 0 auto;
-}
-
 .today-intro > p {
     font-size: 20px;
     line-height: 40px;
@@ -20,9 +15,14 @@ author: Dval
     font-size: 28px;
 }
 
-.today-phone {
-    background: url(../../images/w640/img_today.png) no-repeat;
-    background-size: 200px 372px;
-    width: 200px;
-    height: 372px;
+.wrap-today-phone {
+    width: $imgTodayPhoneWidth;
+    margin: 0 auto;
+}
+
+.img-today-phone {
+    background-image: url("../../images/w640/img_today.png");
+    background-size: $imgTodayPhoneWidth $imgTodayPhoneHeight;
+    width: $imgTodayPhoneWidth;
+    height: $imgTodayPhoneHeight;
 }

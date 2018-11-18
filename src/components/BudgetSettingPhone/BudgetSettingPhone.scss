@@ -5,13 +5,13 @@ author: Dval
 @import '../common';
 
 .wrap-budget-setting-phone {
-    width: 260px;
+    width: $imgBudgetSettingPhoneWidth;
     margin: 0 auto;
 }
 
-.budget-setting-phone {
+.img-budget-setting-phone {
     background: url('../../images/w640/img_budget_setting.png') no-repeat;
-    background-size: 260px 318px;
-    width: 260px;
-    height: 318px;
+    background-size: $imgBudgetSettingPhoneWidth $imgBudgetSettingPhoneHeight;
+    width: $imgBudgetSettingPhoneWidth;
+    height: $imgBudgetSettingPhoneHeight;
 }

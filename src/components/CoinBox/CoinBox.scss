@@ -12,12 +12,12 @@ author: Dval
 
 .coin-box-left {
     left: 50%;
-    margin-left: -$coinBoxWidth - 30px + ($coinBoxWidth - $coinWidth) / 2;
+    margin-left: -$coinBoxWidth - 30px + ($coinBoxWidth - $imgCoinWidth) / 2;
 }
 
 .coin-box-right {
     right: 50%;
-    margin-right: -$coinBoxWidth - 30px + ($coinBoxWidth - $coinWidth) / 2;
+    margin-right: -$coinBoxWidth - 30px + ($coinBoxWidth - $imgCoinWidth) / 2;
 }
 
 .wrap-coin {

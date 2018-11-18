@@ -9,12 +9,12 @@ author: Dval
     width: $wrapBudgetCardWidth;
     height: $wrapBudgetCardHeight;
     left: 50%;
-    margin-left: -$wrapBudgetCardWidth / 2 - $budgetCardWidth;
+    margin-left: -$wrapBudgetCardWidth / 2 - $imgBudgetCardWidth;
 }
 
 [data-aos="swipe-card"] {
     transition-property: transform;
     &.aos-animate {
-       transform: translateX($budgetCardWidth);
+       transform: translateX($imgBudgetCardWidth);
    } 
 }

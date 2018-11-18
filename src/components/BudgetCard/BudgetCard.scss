@@ -4,27 +4,30 @@ author: Dval
 
 @import '../common';
 
+@mixin img-budget-card() {
+    background-size: $imgBudgetCardWidth $imgBudgetCardHeight;
+    width: $imgBudgetCardWidth;
+    height: $imgBudgetCardHeight;
+}
+
 .budget-card {
     position: relative;
     float: left;
-    width: $budgetCardWidth;
-    height: $budgetCardHeight;
-    background-size: $budgetCardWidth $budgetCardHeight;
 }
 
-.budget-card0 {
-    @extend .budget-card;
+.img-budget-card0 {
+    @include img-budget-card();
     background-image: url("../../images/w640/img_budget_card0.png");
     margin-right: 2px;
 }
 
-.budget-card1 {
-    @extend .budget-card;
+.img-budget-card1 {
+    @include img-budget-card();
     background-image: url("../../images/w640/img_budget_card1.png");
     margin-right: 2px;
 }
 
-.budget-card2 {
-    @extend .budget-card;
+.img-budget-card2 {
+    @include img-budget-card();
     background-image: url("../../images/w640/img_budget_card1.png");
 }

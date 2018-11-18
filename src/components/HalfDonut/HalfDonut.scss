@@ -7,30 +7,36 @@ author: Dval
 .wrap-half-donut {
 	position: absolute;
 	overflow: hidden;
-	width: $halfDonutWidth;
-	height: $halfDonutHeight;
+	width: $imgHalfDonutWidth;
+	height: $imgHalfDonutHeight;
 	top: 0;
 	left: 0;
 }
 
 .half-donut {
 	position: absolute;
-	background-size: $halfDonutWidth $halfDonutHeight;
-	width: $halfDonutWidth;
-	height: $halfDonutHeight;
 	transform: rotate(-180deg);
 	transform-origin: 0% 50%;
 }
 
-.half-donut0 {
+@mixin img-half-donut() {
+	background-size: $imgHalfDonutWidth $imgHalfDonutHeight;
+	width: $imgHalfDonutWidth;
+	height: $imgHalfDonutHeight;
+}
+
+.img-half-donut0 {
+	@include img-half-donut();
 	background-image: url('../../images/w640/img_graph_orange.png');
 }
 
-.half-donut1 {
+.img-half-donut1 {
+	@include img-half-donut();
 	background-image: url('../../images/w640/img_graph_green.png');
 }
 
-.half-donut2 {
+.img-half-donut2 {
+	@include img-half-donut();
 	background-image: url('../../images/w640/img_graph_red.png');
 }
 

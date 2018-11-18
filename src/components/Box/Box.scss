@@ -7,11 +7,11 @@ author: Dval
 .one-day-intro-box {
     z-index: -10;
     position: absolute;
-    width: 262px;
-    height: 168px;
     top: 116px;
     left: 50%;
-    margin-left: -$today-budget-intro-box-width / 2;
+    width: $todayBudgetIntroBoxWidth;
+    height: $todayBudgetIntroBoxHeight;
+    margin-left: -$todayBudgetIntroBoxWidth / 2;
     border-radius: 4px;
     background-color: #ffaf6d;
 }
@@ -19,6 +19,6 @@ author: Dval
 [data-aos="one-day-intro-box-slide-down"] {
     transition-property: transform;
     &.aos-animate {
-        transform: translateY(168px);
+        transform: translateY($todayBudgetIntroBoxHeight);
     }
 }

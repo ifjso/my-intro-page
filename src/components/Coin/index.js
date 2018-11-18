@@ -56,8 +56,8 @@ const Coin = ({
 
     return (
         <div className="coin" {...outerAosOpts} style={{top}}>
-            <div className="coin-white" {...innerWhiteAosOpts} />
-            <div className="coin-orange" {...innerOrangeAosOpts} />
+            <div className="img-coin-white" {...innerWhiteAosOpts} />
+            <div className="img-coin-orange" {...innerOrangeAosOpts} />
         </div>
     );
 };
