@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import TodayIntro from './components/TodayIntro';
+import BudgetSettingIntro from './components/BudgetSettingIntro';
 import OneDayIntro from './components/OneDayIntro';
 import BudgetIntro from './components/BudgetIntro';
 import './App.scss';
@@ -22,7 +23,7 @@ class App extends Component {
         return (
             <div className="App">
                 <TodayIntro />
-                <div style={{height: 500}}></div>
+                <BudgetSettingIntro />
                 <OneDayIntro />
                 <BudgetIntro />
             </div>
