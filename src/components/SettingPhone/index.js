@@ -4,7 +4,7 @@ author: Dval
 
 import React from 'react';
 import SettingText, { SettingTextType as TextType } from '../SettingText';
-import SettingTextBox from '../SettingTextBox';
+import SettingTextStamp from '../SettingTextStamp';
 import './SettingPhone.scss';
 
 const SettingPhone = () => {
@@ -52,7 +52,7 @@ const SettingPhone = () => {
                     <SettingText text="50,000원" type={TextType.LARGE} top={81} />
                 </div>
     
-                <SettingTextBox id="bb" text="지난 소비 기준 한달 평균 예산" />
+                <SettingTextStamp id="bb" text="지난 소비 기준 한달 평균 예산" />
             </div>
         </div>
     );
