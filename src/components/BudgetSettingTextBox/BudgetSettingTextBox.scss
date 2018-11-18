@@ -3,6 +3,7 @@ author: Dval
 ----------------------------------------------------------*/
 
 @import '../constants';
+@import '../animations';
 
 .budget-setting-text-box {
     display: flex;
@@ -16,15 +17,4 @@ author: Dval
     font-size: 11px;
     font-weight: bold;
     color: #ffa059;
-}
-
-.blink {
-    animation: blink 1s linear 1s 1 normal forwards;	
-}
-
-@keyframes blink {
-    0% { opacity: 0; }
-    5% { opacity: 1; }
-    95% { opacity: 1; }
-    100% { opacity: 0; }
 }

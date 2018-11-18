@@ -3,6 +3,7 @@ author: Dval
 ----------------------------------------------------------*/
 
 @import '../constants';
+@import '../animations';
 
 @mixin budget-setting-text() {
     position: absolute;
@@ -25,26 +26,4 @@ author: Dval
     @include budget-setting-text();
     font-size: 14px;
     color: #595959;
-}
-
-.blink-back {
-    animation: blink-back 1s linear 1s 1 normal forwards;	
-}
-
-.blink-orange {
-    animation: blink-orange 1s linear 1s 1 normal forwards;
-}
-
-@keyframes blink-back {
-    0% { opacity: 1; }
-    5% { opacity: 0; }
-    95% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes blink-orange {
-    0% { color: #c0c0c0 }
-    5% { color: #ffa059 }
-    95% { color: #ffa059 }
-    100% { color: #c0c0c0 }
 }
