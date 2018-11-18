@@ -27,7 +27,7 @@ class BudgetCards extends Component {
         const commonAosOpts = {
             'data-aos': 'swipe-card',
             'data-aos-id': 'swipe-card',
-            'data-aos-easing': 'ease-out-quart',
+            'data-aos-easing': 'ease',
             'data-aos-anchor-placement': 'top-bottom',
             'data-aos-delay': '1200',
             'data-aos-duration': '900'
