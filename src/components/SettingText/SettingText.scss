@@ -5,25 +5,25 @@ author: Dval
 @import '../constants';
 @import '../animations';
 
-@mixin budget-setting-text() {
+@mixin setting-text() {
     position: absolute;
     line-height: 14px;
 }
 
-.budget-setting-text-small {
-    @include budget-setting-text();
+.setting-text-small {
+    @include setting-text();
     font-size: 10px;
     color: #c0c0c0;
 }
 
-.budget-setting-text-middle {
-    @include budget-setting-text();
+.setting-text-middle {
+    @include setting-text();
     font-size: 12px;
     color: #c0c0c0;
 }
 
-.budget-setting-text-large {
-    @include budget-setting-text();
+.setting-text-large {
+    @include setting-text();
     font-size: 14px;
     color: #595959;
 }

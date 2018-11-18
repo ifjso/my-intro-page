@@ -5,13 +5,13 @@ author: Dval
 @import '../constants';
 @import '../animations';
 
-.budget-setting-text-box {
+.setting-text-box {
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: $budgetSettingTextBoxWidth;
-    height: $budgetSettingTextBoxHeight;
+    width: $settingTextBoxWidth;
+    height: $settingTextBoxHeight;
     border: 1px solid #ffa059;
     border-radius: 11px;
     font-size: 11px;

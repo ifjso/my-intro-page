@@ -1,0 +1,18 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../constants';
+
+.wrap-setting-phone {
+    position: relative;
+    width: $imgSettingPhoneWidth;
+    margin: 0 auto;
+}
+
+.img-setting-phone {
+    background-image: url('../../images/w640/img_setting.png');
+    background-size: $imgSettingPhoneWidth $imgSettingPhoneHeight;
+    width: $imgSettingPhoneWidth;
+    height: $imgSettingPhoneHeight;
+}

@@ -4,20 +4,20 @@ author: Dval
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import './BudgetSettingText.scss';
+import './SettingText.scss';
 
-const BudgetSettingText = ({
+const SettingText = ({
     id,
     text,
-    type = BudgetSettingTextType.MIDDLE,
+    type = SettingTextType.MIDDLE,
     top = 94,
     right = 38
 }) => 
-    <span className={`budget-setting-text-${type}`} id={id} style={{top, right}}>
+    <span className={`setting-text-${type}`} id={id} style={{top, right}}>
         {text}
     </span>;
 
-BudgetSettingText.propTypes = {
+SettingText.propTypes = {
     id: PropTypes.string,
     text: PropTypes.string.isRequired,
     type: PropTypes.string,
@@ -25,10 +25,10 @@ BudgetSettingText.propTypes = {
     right: PropTypes.number
 };
 
-export const BudgetSettingTextType = {
+export const SettingTextType = {
     SMALL: 'small',
     MIDDLE: 'middle',
     LARGE: 'large'
 };
 
-export default BudgetSettingText;
+export default SettingText;
