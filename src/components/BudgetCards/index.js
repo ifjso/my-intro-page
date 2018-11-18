@@ -20,10 +20,10 @@ const BudgetCards = () => {
     const commonAosOpts = {
         'data-aos': 'swipe-card',
         'data-aos-id': 'swipe-card',
-        'data-aos-easing': 'ease-in-out',
+        'data-aos-easing': 'ease-out-quart',
         'data-aos-anchor-placement': 'top-bottom',
-        'data-aos-delay': '900',
-        'data-aos-duration': '800'
+        'data-aos-delay': '1200',
+        'data-aos-duration': '900'
     };
 
     return (

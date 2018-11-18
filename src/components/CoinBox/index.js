@@ -19,7 +19,7 @@ const CoinBox = ({
     useOuterCoinAos = false,
     useInnerCoinAos = false,
     outerCoinAosType = 'coin-slide-left',
-    outerCoinAosDelay = 1000,
+    outerCoinAosDelay = 1200,
     calcInnerCoinAosDelay = () => 0,
     innerCoinAosDuration = 50
 }) => {

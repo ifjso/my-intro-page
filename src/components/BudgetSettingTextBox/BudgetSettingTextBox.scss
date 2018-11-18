@@ -14,11 +14,12 @@ author: Dval
     border: 1px solid #ffa059;
     border-radius: 11px;
     font-size: 11px;
+    font-weight: bold;
     color: #ffa059;
 }
 
 .blink {
-    animation: blink 1s linear 0.8s 1 normal forwards;	
+    animation: blink 1s linear 1s 1 normal forwards;	
 }
 
 @keyframes blink {

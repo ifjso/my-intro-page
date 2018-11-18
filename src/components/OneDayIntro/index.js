@@ -14,7 +14,7 @@ const OneDayIntro = () =>
             <strong>하루 예산</strong>을 보며<br/>
             매일 지출을 관리하세요.
         </p>
-        <Box id="one-day-intro-box" aosDelay={1800} />
+        <Box id="one-day-intro-box" aosDelay={2000} />
         <OneDayCoins />
     </div>;
 

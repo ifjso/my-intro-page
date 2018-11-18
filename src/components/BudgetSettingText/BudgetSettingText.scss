@@ -28,11 +28,11 @@ author: Dval
 }
 
 .blink-back {
-    animation: blink-back 1s linear 0.8s 1 normal forwards;	
+    animation: blink-back 1s linear 1s 1 normal forwards;	
 }
 
 .blink-orange {
-    animation: blink-orange 1s linear 0.8s 1 normal forwards;
+    animation: blink-orange 1s linear 1s 1 normal forwards;
 }
 
 @keyframes blink-back {
