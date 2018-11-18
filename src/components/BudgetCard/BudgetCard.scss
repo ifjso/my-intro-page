@@ -2,7 +2,7 @@
 author: Dval
 ----------------------------------------------------------*/
 
-@import '../common';
+@import '../constants';
 
 @mixin img-budget-card() {
     background-size: $imgBudgetCardWidth $imgBudgetCardHeight;
