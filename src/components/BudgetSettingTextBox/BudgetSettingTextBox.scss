@@ -1,0 +1,18 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../common';
+
+.budget-setting-text-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: $budgetSettingTextBoxWidth;
+    height: $budgetSettingTextBoxHeight;
+    border: 1px solid #ffa059;
+    border-radius: 11px;
+    font-size: 11px;
+    color: #ffa059
+}
