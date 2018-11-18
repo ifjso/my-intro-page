@@ -1,0 +1,13 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../constants';
+
+.fixed-scroll-zone {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    transition: bottom 0.25s;
+}
