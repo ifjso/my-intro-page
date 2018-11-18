@@ -5,9 +5,12 @@ author: Dval
 @import '../constants';
 
 @mixin img-budget-card() {
-    background-size: $imgBudgetCardWidth $imgBudgetCardHeight;
     width: $imgBudgetCardWidth;
     height: $imgBudgetCardHeight;
+}
+
+@mixin img-budget-card-background-size() {
+    background-size: $imgBudgetCardWidth $imgBudgetCardHeight;
 }
 
 .budget-card {
@@ -17,17 +20,39 @@ author: Dval
 
 .img-budget-card0 {
     @include img-budget-card();
-    background-image: url("../../images/w640/img_budget_card0.png");
+    background: url("../../images/w320/img_budget_card0.png") no-repeat;
     margin-right: 2px;
 }
 
 .img-budget-card1 {
     @include img-budget-card();
-    background-image: url("../../images/w640/img_budget_card1.png");
+    background: url("../../images/w320/img_budget_card1.png") no-repeat;
     margin-right: 2px;
 }
 
 .img-budget-card2 {
     @include img-budget-card();
-    background-image: url("../../images/w640/img_budget_card1.png");
+    background: url("../../images/w320/img_budget_card1.png") no-repeat;
+}
+
+@media only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+    .img-budget-card0 {
+        @include img-budget-card();
+        @include img-budget-card-background-size();
+        background-image: url("../../images/w640/img_budget_card0.png");
+        margin-right: 2px;
+    }
+    
+    .img-budget-card1 {
+        @include img-budget-card();
+        @include img-budget-card-background-size();
+        background-image: url("../../images/w640/img_budget_card1.png");
+        margin-right: 2px;
+    }
+    
+    .img-budget-card2 {
+        @include img-budget-card();
+        @include img-budget-card-background-size();
+        background-image: url("../../images/w640/img_budget_card1.png");
+    }
 }

@@ -15,14 +15,25 @@ author: Dval
     font-size: 28px;
 }
 
-.wrap-today-phone {
+.today-phone {
     width: $imgTodayPhoneWidth;
     margin: 0 auto;
 }
 
-.img-today-phone {
-    background-image: url("../../images/w640/img_today.png");
-    background-size: $imgTodayPhoneWidth $imgTodayPhoneHeight;
+@mixin img-today-phone() {
     width: $imgTodayPhoneWidth;
     height: $imgTodayPhoneHeight;
+}
+
+.img-today-phone {
+    @include img-today-phone();
+    background: url("../../images/w320/img_today.png") no-repeat;
+}
+
+@media only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+    .img-today-phone {
+        @include img-today-phone();
+        background-image: url("../../images/w640/img_today.png");
+        background-size: $imgTodayPhoneWidth $imgTodayPhoneHeight;
+    }
 }

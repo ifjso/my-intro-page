@@ -11,7 +11,7 @@ const TodayIntro = () =>
             현명한 소비습관,<br/>
             하루 한번 <strong>{"'오늘'"}</strong> 하세요!
         </p>
-        <div className="wrap-today-phone">
+        <div className="today-phone">
             <div className="img-today-phone"></div>
         </div>
     </div>;

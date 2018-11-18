@@ -10,9 +10,20 @@ author: Dval
     left: 0;
 }
 
-.img-donut {
-    background-image: url("../../images/w640/img_graph_gray.png");
-    background-size: $imgDonutWidth $imgDonutWidth;
+@mixin img-donut() {
     width: $imgDonutWidth;
     height: $imgDonutWidth;
+}
+
+.img-donut {
+    @include img-donut();
+    background: url("../../images/w320/img_graph_gray.png") no-repeat;
+}
+
+@media only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+    .img-donut {
+        @include img-donut();
+        background-image: url("../../images/w640/img_graph_gray.png");
+        background-size: $imgDonutWidth $imgDonutWidth;
+    }
 }

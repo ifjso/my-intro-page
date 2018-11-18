@@ -20,24 +20,47 @@ author: Dval
 }
 
 @mixin img-half-donut() {
-	background-size: $imgHalfDonutWidth $imgHalfDonutHeight;
 	width: $imgHalfDonutWidth;
 	height: $imgHalfDonutHeight;
 }
 
+@mixin img-half-donut-background-size() {
+	background-size: $imgHalfDonutWidth $imgHalfDonutHeight;
+}
+
 .img-half-donut0 {
 	@include img-half-donut();
-	background-image: url('../../images/w640/img_graph_orange.png');
+	background: url('../../images/w320/img_graph_orange.png') no-repeat;
 }
 
 .img-half-donut1 {
 	@include img-half-donut();
-	background-image: url('../../images/w640/img_graph_green.png');
+	background: url('../../images/w320/img_graph_green.png') no-repeat;
 }
 
 .img-half-donut2 {
 	@include img-half-donut();
-	background-image: url('../../images/w640/img_graph_red.png');
+	background: url('../../images/w320/img_graph_red.png') no-repeat;
+}
+
+@media only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+	.img-half-donut0 {
+		@include img-half-donut();
+		@include img-half-donut-background-size();
+		background-image: url('../../images/w640/img_graph_orange.png');
+	}
+	
+	.img-half-donut1 {
+		@include img-half-donut();
+		@include img-half-donut-background-size();
+		background-image: url('../../images/w640/img_graph_green.png');
+	}
+	
+	.img-half-donut2 {
+		@include img-half-donut();
+		@include img-half-donut-background-size();
+		background-image: url('../../images/w640/img_graph_red.png');
+	}
 }
 
 .half-donut0-rotate {

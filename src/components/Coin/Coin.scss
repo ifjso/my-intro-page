@@ -14,20 +14,38 @@ author: Dval
 
 @mixin img-coin() {
     position: absolute;
-    background-size: $imgCoinWidth $imgCoinHeight;
     width: $imgCoinWidth;
     height: $imgCoinHeight;
 }
 
+@mixin img-coin-background-size() {
+    background-size: $imgCoinWidth $imgCoinHeight;
+}
+
 .img-coin-white {
     @include img-coin();
-    background-image: url('../../images/w640/img_coin_white.png');
+    background: url('../../images/w320/img_coin_white.png') no-repeat;
 }
 
 .img-coin-orange {
     @include img-coin();
-    background-image: url('../../images/w640/img_coin_orange.png');
+    background: url('../../images/w320/img_coin_orange.png') no-repeat;
     opacity: 0;
+}
+
+@media only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+    .img-coin-white {
+        @include img-coin();
+        @include img-coin-background-size();
+        background-image: url('../../images/w640/img_coin_white.png');
+    }
+    
+    .img-coin-orange {
+        @include img-coin();
+        @include img-coin-background-size();
+        background-image: url('../../images/w640/img_coin_orange.png');
+        opacity: 0;
+    }
 }
 
 [data-aos="coin-slide-left"] {
