@@ -50,7 +50,6 @@ const BudgetSettingPhone = () => {
                 >
                     <BudgetSettingText text="1,500,000원" type={TextType.LARGE} top={20} />
                     <BudgetSettingText text="50,000원" type={TextType.LARGE} top={81} />
-                    {/* <div className="img-budget-setting-average" style={{position: "absolute", top:178, right:32}}></div> */}
                 </div>
     
                 <BudgetSettingTextBox id="bb" text="지난 소비 기준 한달 평균 예산" />
