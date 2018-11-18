@@ -6,13 +6,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './HalfDonut.scss';
 
-const HalfDonut = ({type, top = 23, left = 83, transform}) => {
-    return (
-        <div className="wrap-half-donut" style={{top, left, transform}}>
-            <div className={`half-donut img-half-donut${type}`} />
-        </div>
-    );
-};
+const HalfDonut = ({type, top = 23, left = 83, transform}) =>
+    <div className="wrap-half-donut" style={{top, left, transform}}>
+        <div className={`half-donut img-half-donut${type}`} />
+    </div>;
 
 HalfDonut.propTypes = {
     type: PropTypes.string.isRequired,
