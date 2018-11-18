@@ -6,6 +6,10 @@ author: Dval
     text-align: center;
 }
 
+.hide {
+  opacity: 0;
+}
+
 [data-aos="d-fade-out"] {
     transition-property: opacity;
     &.aos-animate {
