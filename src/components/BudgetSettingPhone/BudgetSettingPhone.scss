@@ -5,13 +5,22 @@ author: Dval
 @import '../common';
 
 .wrap-budget-setting-phone {
+    position: relative;
     width: $imgBudgetSettingPhoneWidth;
     margin: 0 auto;
 }
 
 .img-budget-setting-phone {
-    background: url('../../images/w640/img_budget_setting.png') no-repeat;
+    background-image: url('../../images/w640/img_budget_setting.png');
     background-size: $imgBudgetSettingPhoneWidth $imgBudgetSettingPhoneHeight;
     width: $imgBudgetSettingPhoneWidth;
     height: $imgBudgetSettingPhoneHeight;
 }
+
+.img-budget-setting-average {
+    background-image: url('../../images/w640/img_budget_average.png');
+    background-size: 142px 22px;
+    width: 142px;
+    height: 22px;
+}
+

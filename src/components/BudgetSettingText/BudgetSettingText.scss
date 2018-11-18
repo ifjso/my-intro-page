@@ -1,0 +1,28 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../common';
+
+@mixin budget-setting-text() {
+    position: absolute;
+    line-height: 14px;
+}
+
+.budget-setting-text-small {
+    @include budget-setting-text();
+    font-size: 10px;
+    color: #c0c0c0;
+}
+
+.budget-setting-text-middle {
+    @include budget-setting-text();
+    font-size: 12px;
+    color: #c0c0c0;
+}
+
+.budget-setting-text-large {
+    @include budget-setting-text();
+    font-size: 14px;
+    color: #595959;
+}
