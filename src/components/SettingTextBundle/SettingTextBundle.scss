@@ -1,0 +1,21 @@
+/* --------------------------------------------------------
+author: Dval
+----------------------------------------------------------*/
+
+@import '../constants';
+
+@mixin setting-text-bundle() {
+    position: absolute;
+    width: $imgSettingPhoneWidth;
+}
+
+.setting-text-bundle-top {
+    @include setting-text-bundle();
+    height: 134px;
+}
+
+.setting-text-bundle-bottom {
+    @include setting-text-bundle();
+    height: 184px;
+    top: 134px
+}
