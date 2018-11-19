@@ -9,18 +9,20 @@ import HalfDonut, { HalfDonutType } from '../HalfDonut';
 import './BudgetCards.scss';
 
 class BudgetCards extends Component {
-    componentDidMount() {
+    handleSwipeCard() {
         // 예산 카드 이벤트 시작 시 도넛 애니메이션도 시작
-        document.addEventListener('aos:in:swipe-card', () => {
-            const halfDonuts = document.getElementsByClassName('half-donut');
-            Array.prototype.forEach.call(halfDonuts, (halfDonut, i) => {
-                halfDonut.classList.add(`half-donut${i}-rotate`);
-            });
+        const halfDonuts = document.getElementsByClassName('half-donut');
+        Array.prototype.forEach.call(halfDonuts, (halfDonut, i) => {
+            halfDonut.classList.add(`half-donut${i}-rotate`);
         });
     }
 
+    componentDidMount() {
+        document.addEventListener('aos:in:swipe-card', this.handleSwipeCard);
+    }
+
     componentWillUnmount() {
-        document.removeEventListener('aos:in:swipe-card');
+        document.removeEventListener('aos:in:swipe-card', this.handleSwipeCard);
     }
 
     render() {
