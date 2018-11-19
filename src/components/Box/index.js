@@ -9,8 +9,9 @@ import './Box.scss';
 const Box = ({id, aosType = 'one-day-intro-box-slide-down', aosDelay = 0 }) => {
     const boxAosOpts = {
         'data-aos': aosType,
+        'data-aos-offset': 60,
         'data-aos-delay': aosDelay,
-        'data-aos-anchor-placement': 'top-bottom',
+        'data-aos-anchor-placement': 'bottom-bottom',
     };
 
     return (

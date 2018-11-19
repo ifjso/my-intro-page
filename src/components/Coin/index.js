@@ -19,8 +19,9 @@ const Coin = ({
     innerAosDuration = 50
 }) => {
     const commonAosOpts = {
+        'data-aos-offset': 60,
         'data-aos-anchor': '#one-day-intro-box',
-        'data-aos-anchor-placement': 'top-bottom'
+        'data-aos-anchor-placement': 'bottom-bottom'
     };
 
     let outerAosOpts = {};
