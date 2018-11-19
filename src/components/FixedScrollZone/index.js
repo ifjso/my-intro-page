@@ -10,24 +10,22 @@ class FixedScrollZone extends Component {
     constructor(props) {
         super(props);
         this.state = { visible: false };
+        this.handleScroll = this.handleScroll.bind(this);        
+    }
+
+    handleScroll() {
+        if (window.scrollY > 250) {
+            this.setState({ visible: true });
+            window.removeEventListener('scroll', this.handleScroll);
+        }
     }
 
     componentDidMount() {
-        let timer;
-
-        window.addEventListener('scroll', () => {
-            this.setState({ visible: false });
-
-            if (timer) {
-                window.clearTimeout(timer);
-            }
-
-            timer = setTimeout(() => this.setState({ visible: true }), 500);
-        }, false);
+        window.addEventListener('scroll', this.handleScroll, false);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll');
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
