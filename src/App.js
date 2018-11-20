@@ -17,7 +17,7 @@ import './App.scss';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {osType: OsType.IOS, enableButton: true, buttonType: ButtonType.NEXT};
+        this.state = {osType: OsType.IOS, enableButton: false, buttonType: ButtonType.NEXT};
         window.returnWelcomeButtonType = this.returnWelcomeButtonType.bind(this);
     }
 
@@ -28,11 +28,7 @@ class App extends Component {
             if (/iphone|ipod|ipad/.test(userAgent)) {
                 window.webkit.messageHandlers.getButtonType.postMessage("");
             } else if (/android/.test(userAgent)) {
-                this.setState({
-                    osType: OsType.ANDROID,
-                    enableButton: true,
-                    buttonType: window.welcomeView.getButtonType()
-                });
+                this.setState({osType: OsType.ANDROID, enableButton: true, buttonType: window.welcomeView.getButtonType()});
             }
         } catch (e) {
             console.error('Native function call failed.');
@@ -49,7 +45,7 @@ class App extends Component {
                 window.webkit.messageHandlers.close.postMessage(buttonType) :
                 window.welcomeView.close(buttonType);
         } catch(e) {
-            throw new Error('Native function call failed.');
+            console.error('Native function call failed.');
         }                
     }
 
@@ -64,29 +60,26 @@ class App extends Component {
                 <SettingIntro />
                 <OneDayIntro />
                 <BudgetIntro />
-                {
-                    this.state.enableButton ? 
-                        <FixedScrollZone height={56}>
-                            {
-                                (this.state.buttonType === ButtonType.NEXT) ?
-                                    <BlockButton
-                                        text="다음에 하기"
-                                        width="34%"
-                                        left={0}
-                                        backgroundColor="#ffb37a"
-                                        color="white"
-                                        onClick={() => this.closeWebView(ButtonType.NEXT)}
-                                    /> : ''
-                            }
+                {this.state.enableButton ? 
+                    <FixedScrollZone height={56}>
+                        {(this.state.buttonType === ButtonType.NEXT) ?
                             <BlockButton
-                                text="시작하기"
-                                width={`${(this.state.buttonType === ButtonType.NEXT) ? '66%' : '100%'}`}
-                                right={0}
-                                backgroundColor="white"
-                                color="#ffa059"
-                                onClick={() => this.closeWebView(ButtonType.START)}
-                            />
-                        </FixedScrollZone> : ''
+                                text="다음에 하기"
+                                width="34%"
+                                left={0}
+                                backgroundColor="#ffb37a"
+                                color="white"
+                                onClick={() => this.closeWebView(ButtonType.NEXT)}/> : ''
+                        }
+                        <BlockButton
+                            text="시작하기"
+                            width={`${(this.state.buttonType === ButtonType.NEXT) ? '66%' : '100%'}`}
+                            right={0}
+                            backgroundColor="white"
+                            color="#ffa059"
+                            onClick={() => this.closeWebView(ButtonType.START)}
+                        />
+                    </FixedScrollZone> : ''
                 }
                 <ScrollArrow />
             </div>
