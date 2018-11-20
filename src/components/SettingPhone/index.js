@@ -9,17 +9,19 @@ import SettingTextBundle, { SettingTextBundleType as TextBundleType } from '../S
 import './SettingPhone.scss';
 
 class SettingPhone extends Component {
+    handleSettingPhone() {
+        const addAnimation = (id, className) => document.getElementById(id).classList.add(className);
+        addAnimation('average-budget-stamp', 'blink');
+        addAnimation('average-budget-text', 'blink-back');
+        addAnimation('average-budget-value', 'blink-orange');
+    }
+
     componentDidMount() {
-        document.addEventListener('aos:in:setting-phone', () => {
-            const addAnimation = (id, className) => document.getElementById(id).classList.add(className);
-            addAnimation('average-budget-stamp', 'blink');
-            addAnimation('average-budget-text', 'blink-back');
-            addAnimation('average-budget-value', 'blink-orange');
-        });
+        document.addEventListener('aos:in:setting-phone', this.handleSettingPhone);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('aos:in:setting-phone');
+        document.removeEventListener('aos:in:setting-phone', this.handleSettingPhone);
     }
 
     render() {
