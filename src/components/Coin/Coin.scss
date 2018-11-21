@@ -27,9 +27,15 @@ author: Dval
     background: url('../../images/w320/img_coin_white.png') no-repeat;
 }
 
-.img-coin-orange {
+.img-coin-orange-ios {
     @include img-coin();
-    background: url('../../images/w320/img_coin_orange.png') no-repeat;
+    background: url('../../images/w320/img_coin_orange_ios.png') no-repeat;
+    opacity: 0;
+}
+
+.img-coin-orange-android {
+    @include img-coin();
+    background: url('../../images/w320/img_coin_orange_android.png') no-repeat;
     opacity: 0;
 }
 
@@ -39,11 +45,18 @@ author: Dval
         @include img-coin-background-size();
         background-image: url('../../images/w640/img_coin_white.png');
     }
-    
-    .img-coin-orange {
+
+    .img-coin-orange-ios {
         @include img-coin();
         @include img-coin-background-size();
-        background-image: url('../../images/w640/img_coin_orange.png');
+        background-image: url('../../images/w640/img_coin_orange_ios.png');
+        opacity: 0;
+    }
+
+    .img-coin-orange-android {
+        @include img-coin();
+        @include img-coin-background-size();
+        background-image: url('../../images/w640/img_coin_orange_android.png');
         opacity: 0;
     }
 }

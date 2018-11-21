@@ -19,6 +19,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            loaded: false,
             osType: OsType.IOS,
             enableButton: false,
             buttonType: ButtonType.NEXT,
@@ -27,19 +28,23 @@ class App extends Component {
         };
 
         window.returnWelcomeButtonType = this.returnWelcomeButtonType.bind(this);
+        window.osType = OsType.IOS;
     }
-
+    
     componentDidMount() {
         try {
             const userAgent = navigator.userAgent.toLowerCase();
-
+            
             if (/iphone|ipod|ipad/.test(userAgent)) {
                 window.webkit.messageHandlers.getButtonType.postMessage("");
+                this.setState({...this.state, loaded: true});
             } else if (/android/.test(userAgent)) {
+                window.osType = OsType.ANDROID;
                 this.setState({
+                    loaded: true,
                     osType: OsType.ANDROID,
                     enableButton: true,
-                    buttonType: window.welcomeView.getButtonType(),
+                    buttonType: "0", // window.welcomeView.getButtonType(),
                     bodyColor: BodyColor.ANDROID,
                     nextButtonColor: NextButtonColor.ANDROID
                 });
@@ -70,37 +75,41 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <Helmet bodyAttributes={{style: `background-color: ${this.state.bodyColor}`}} />
+            this.state.loaded ? 
+                <div>
+                    <Helmet bodyAttributes={{style: `background-color: ${this.state.bodyColor}`}} />
 
-                <TodayIntro />
-                <SettingIntro />
-                <OneDayIntro />
-                <BudgetIntro />
+                    <TodayIntro />
+                    <SettingIntro />
+                    <OneDayIntro />
+                    <BudgetIntro />
 
-                <FixedScrollZone height={56} enable={this.state.enableButton}>
-                    {(this.state.buttonType === ButtonType.NEXT) ?
+                    <FixedScrollZone height={56} enable={this.state.enableButton}>
+                        {(this.state.buttonType === ButtonType.NEXT) ?
+                            <BlockButton
+                                text="다음에 하기"
+                                width="34%"
+                                left={0}
+                                backgroundColor={this.state.nextButtonColor}
+                                color="white"
+                                onClick={() => this.closeWebView(ButtonType.NEXT)}
+                            /> : ''
+                        }
                         <BlockButton
-                            text="다음에 하기"
-                            width="34%"
-                            left={0}
-                            backgroundColor={this.state.nextButtonColor}
-                            color="white"
-                            onClick={() => this.closeWebView(ButtonType.NEXT)}
-                        /> : ''
-                    }
-                    <BlockButton
-                        text="시작하기"
-                        width={`${(this.state.buttonType === ButtonType.NEXT) ? '66%' : '100%'}`}
-                        right={0}
-                        backgroundColor="white"
-                        color={this.state.bodyColor}
-                        onClick={() => this.closeWebView(ButtonType.START)}
-                    />
-                </FixedScrollZone>
+                            text="시작하기"
+                            width={`${(this.state.buttonType === ButtonType.NEXT) ? '66%' : '100%'}`}
+                            right={0}
+                            backgroundColor="white"
+                            color={this.state.bodyColor}
+                            onClick={() => this.closeWebView(ButtonType.START)}
+                        />
+                    </FixedScrollZone>
 
-                <ScrollArrow />
-            </div>
+                    <ScrollArrow />
+                </div> : 
+                <div>
+                    <Helmet bodyAttributes={{style: `background-color: ${this.state.bodyColor}`}} />
+                </div>
         );
     }
 }
