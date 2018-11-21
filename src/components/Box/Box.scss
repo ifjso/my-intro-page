@@ -13,7 +13,8 @@ author: Dval
     height: $todayBudgetIntroBoxHeight;
     margin-left: -$todayBudgetIntroBoxWidth / 2;
     border-radius: 4px;
-    background-color: #ffaf6d;
+    background-color: white;
+    opacity: 0.13;
 }
 
 [data-aos="one-day-intro-box-slide-down"] {

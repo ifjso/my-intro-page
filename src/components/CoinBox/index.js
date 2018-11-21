@@ -28,7 +28,6 @@ const CoinBox = ({
     if (useBoxAos) {
         boxAosOpts = {
             'data-aos': boxAosType,
-            'data-aos-offset': 60,
             'data-aos-delay': boxAosDelay,
             'data-aos-anchor-placement': 'bottom-bottom',
             'data-aos-anchor': '#one-day-intro-box',
