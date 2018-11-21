@@ -18,7 +18,14 @@ import './App.scss';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {osType: OsType.IOS, enableButton: true, buttonType: ButtonType.NEXT};
+        this.state = {
+            osType: OsType.IOS,
+            enableButton: false,
+            buttonType: ButtonType.NEXT,
+            bodyColor: BodyColor.IOS,
+            nextButtonColor: NextButtonColor.IOS
+        };
+
         window.returnWelcomeButtonType = this.returnWelcomeButtonType.bind(this);
     }
 
@@ -29,7 +36,13 @@ class App extends Component {
             if (/iphone|ipod|ipad/.test(userAgent)) {
                 window.webkit.messageHandlers.getButtonType.postMessage("");
             } else if (/android/.test(userAgent)) {
-                this.setState({osType: OsType.ANDROID, enableButton: true, buttonType: window.welcomeView.getButtonType()});
+                this.setState({
+                    osType: OsType.ANDROID,
+                    enableButton: true,
+                    buttonType: window.welcomeView.getButtonType(),
+                    bodyColor: BodyColor.ANDROID,
+                    nextButtonColor: NextButtonColor.ANDROID
+                });
             }
         } catch (e) {
             console.error('Native function call failed.');
@@ -50,42 +63,42 @@ class App extends Component {
         }                
     }
 
+    // ios > js call method
     returnWelcomeButtonType(buttonType) {
         this.setState({...this.state, enableButton: true, buttonType});
     }
 
     render() {
-        const osType = this.state.osType;        
-        
         return (
             <div>
-                <Helmet bodyAttributes={{style: `background-color: ${(osType === OsType.IOS) ? '#ffa059' : '#f3b173'}`}} />
+                <Helmet bodyAttributes={{style: `background-color: ${this.state.bodyColor}`}} />
 
                 <TodayIntro />
                 <SettingIntro />
                 <OneDayIntro />
                 <BudgetIntro />
-                {this.state.enableButton ? 
-                    <FixedScrollZone height={56}>
-                        {(this.state.buttonType === ButtonType.NEXT) ?
-                            <BlockButton
-                                text="다음에 하기"
-                                width="34%"
-                                left={0}
-                                backgroundColor="#ffb37a"
-                                color="white"
-                                onClick={() => this.closeWebView(ButtonType.NEXT)}/> : ''
-                        }
+
+                <FixedScrollZone height={56} enable={this.state.enableButton}>
+                    {(this.state.buttonType === ButtonType.NEXT) ?
                         <BlockButton
-                            text="시작하기"
-                            width={`${(this.state.buttonType === ButtonType.NEXT) ? '66%' : '100%'}`}
-                            right={0}
-                            backgroundColor="white"
-                            color="#ffa059"
-                            onClick={() => this.closeWebView(ButtonType.START)}
-                        />
-                    </FixedScrollZone> : ''
-                }
+                            text="다음에 하기"
+                            width="34%"
+                            left={0}
+                            backgroundColor={this.state.nextButtonColor}
+                            color="white"
+                            onClick={() => this.closeWebView(ButtonType.NEXT)}
+                        /> : ''
+                    }
+                    <BlockButton
+                        text="시작하기"
+                        width={`${(this.state.buttonType === ButtonType.NEXT) ? '66%' : '100%'}`}
+                        right={0}
+                        backgroundColor="white"
+                        color={this.state.bodyColor}
+                        onClick={() => this.closeWebView(ButtonType.START)}
+                    />
+                </FixedScrollZone>
+
                 <ScrollArrow />
             </div>
         );
@@ -93,6 +106,8 @@ class App extends Component {
 }
 
 const OsType = { IOS: 'ios', ANDROID: 'android' };
+const BodyColor = { IOS: '#ffa059', ANDROID: '#f3b173' };
+const NextButtonColor = { IOS: '#ffb37a', ANDROID: '#f6c596' };
 const ButtonType = { NEXT: '0', START: '1' };
 
 export default App;

@@ -29,23 +29,26 @@ class FixedScrollZone extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        return this.state.visible !== nextState.visible;
+        return (this.state.visible !== nextState.visible) || (this.props.enable !== nextState.enable);
     }
 
     render() {
         const height = this.props.height;
         const bottom = this.state.visible ? 0 : -this.props.height;
 
-        return (
-            <div className="fixed-scroll-zone" style={{height, bottom}}>
-                {this.props.children}
-            </div>
-        );
+        let zone = <div></div>;
+
+        if (this.props.enable) {
+            zone = <div className="fixed-scroll-zone" style={{height, bottom}}>{this.props.children}</div>;
+        }
+
+        return zone;
     }
 }
 
 FixedScrollZone.propTypes = {
     height: PropTypes.number,
+    enable: PropTypes.bool,
     children: PropTypes.array
 };
 
