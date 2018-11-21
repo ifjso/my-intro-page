@@ -3,6 +3,7 @@ author: Dval
 ----------------------------------------------------------*/
 
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import TodayIntro from './components/TodayIntro';
@@ -17,7 +18,7 @@ import './App.scss';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {osType: OsType.IOS, enableButton: false, buttonType: ButtonType.NEXT};
+        this.state = {osType: OsType.IOS, enableButton: true, buttonType: ButtonType.NEXT};
         window.returnWelcomeButtonType = this.returnWelcomeButtonType.bind(this);
     }
 
@@ -54,8 +55,11 @@ class App extends Component {
     }
 
     render() {
+        const osType = this.state.osType;        
+        
         return (
-            <div className="App">
+            <div>
+                <Helmet bodyAttributes={{style: `background-color: ${osType === OsType.IOS ? '#ffa059' : '#f3b173'}`}} />                
                 <TodayIntro />
                 <SettingIntro />
                 <OneDayIntro />
