@@ -5,11 +5,12 @@ author: Dval
 @import '../constants';
 
 .one-day-coins {
-    position: relative;
-    top: 38px;
+    position: absolute;
+    top: 212px;
+    left: 50%;
     width: $wrapCoinBoxWidth;
     height: $oneDayCoinsHeight;
-    margin: 0 auto;
+    margin-left: -$wrapCoinBoxWidth / 2;
 }
 
 .wrap-coin-box {

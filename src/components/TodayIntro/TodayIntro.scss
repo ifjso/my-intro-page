@@ -4,6 +4,10 @@ author: Dval
 
 @import '../constants';
 
+.today-intro {
+    position: relative;
+}
+
 .today-intro > p {
     font-size: 20px;
     line-height: 40px;
