@@ -59,7 +59,8 @@ class App extends Component {
         
         return (
             <div>
-                <Helmet bodyAttributes={{style: `background-color: ${osType === OsType.IOS ? '#ffa059' : '#f3b173'}`}} />                
+                <Helmet bodyAttributes={{style: `background-color: ${(osType === OsType.IOS) ? '#ffa059' : '#f3b173'}`}} />
+
                 <TodayIntro />
                 <SettingIntro />
                 <OneDayIntro />
