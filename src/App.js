@@ -32,26 +32,29 @@ class App extends Component {
     }
     
     componentDidMount() {
+        let state = { loaded: true };
+
         try {
             const userAgent = navigator.userAgent.toLowerCase();
             
             if (/iphone|ipod|ipad/.test(userAgent)) {
                 window.webkit.messageHandlers.getButtonType.postMessage("");
-                this.setState({...this.state, loaded: true});
             } else if (/android/.test(userAgent)) {
                 window.osType = OsType.ANDROID;
-                this.setState({
-                    loaded: true,
+                state = {
+                    ...state,
                     osType: OsType.ANDROID,
                     enableButton: true,
-                    buttonType: "0", // window.welcomeView.getButtonType(),
+                    buttonType: window.welcomeView.getButtonType(),
                     bodyColor: BodyColor.ANDROID,
                     nextButtonColor: NextButtonColor.ANDROID
-                });
+                };
             }
         } catch (e) {
             console.error('Native function call failed.');
         }
+
+        this.setState({...this.state, ...state });
 
         AOS.init({ once: true, easing: 'linear' });
     }
