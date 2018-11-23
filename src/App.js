@@ -42,10 +42,14 @@ class App extends Component {
                 state = {
                     ...state,
                     osType: OsType.ANDROID,
-                    enableButton: true,
-                    buttonType: window.welcomeView.getButtonType(),
                     bodyColor: BodyColor.ANDROID,
                     nextButtonColor: NextButtonColor.ANDROID
+                };
+                
+                state = {
+                    ...state,
+                    enableButton: true,
+                    buttonType: window.welcomeView.getButtonType()
                 };
             }
         } catch (e) {
