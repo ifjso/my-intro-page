@@ -6,13 +6,9 @@ import React, { Component } from 'react';
 import './ScrollArrow.scss';
 
 class ScrollArrow extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { hide: true };
-        this.handleScroll = this.handleScroll.bind(this);
-    }
+    state = { hide: true }
 
-    handleScroll() {
+    handleScroll = () => {
         if (window.scrollY > 50) {
             this.setState({ hide: true });
             window.removeEventListener('scroll', this.handleScroll);

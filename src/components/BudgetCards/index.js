@@ -8,8 +8,8 @@ import Donut from '../Donut';
 import HalfDonut, { HalfDonutType } from '../HalfDonut';
 import './BudgetCards.scss';
 
-class BudgetCards extends Component {
-    handleSwipeCard() {
+class BudgetCards extends Component {    
+    handleSwipeCard = () => {
         // 예산 카드 이벤트 시작 시 도넛 애니메이션도 시작
         const halfDonuts = document.getElementsByClassName('half-donut');
         Array.prototype.forEach.call(halfDonuts, (halfDonut, i) => {

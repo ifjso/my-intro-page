@@ -16,23 +16,20 @@ import ScrollArrow from './components/ScrollArrow';
 import './App.scss';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            loaded: false,
-            osType: OsType.IOS,
-            enableButton: false,
-            buttonType: ButtonType.NEXT,
-            bodyColor: BodyColor.IOS,
-            nextButtonColor: NextButtonColor.IOS
-        };
-
-        window.returnWelcomeButtonType = this.returnWelcomeButtonType.bind(this);
-        window.osType = OsType.IOS;
+    state = {
+        loaded: false,
+        osType: OsType.IOS,
+        enableButton: false,
+        buttonType: ButtonType.NEXT,
+        bodyColor: BodyColor.IOS,
+        nextButtonColor: NextButtonColor.IOS
     }
     
     componentDidMount() {
         let state = { loaded: true };
+
+        window.osType = OsType.IOS;
+        window.returnWelcomeButtonType = this.returnWelcomeButtonType;
 
         try {
             const userAgent = navigator.userAgent.toLowerCase();
@@ -41,6 +38,7 @@ class App extends Component {
                 window.webkit.messageHandlers.getButtonType.postMessage("");
             } else if (/android/.test(userAgent)) {
                 window.osType = OsType.ANDROID;
+
                 state = {
                     ...state,
                     osType: OsType.ANDROID,
@@ -59,7 +57,7 @@ class App extends Component {
         AOS.init({ once: true, easing: 'linear' });
     }
 
-    closeWebView(buttonType) {
+    closeWebView = buttonType => {
         const osType = this.state.osType;
         
         try {
@@ -68,13 +66,11 @@ class App extends Component {
                 window.welcomeView.close(buttonType);
         } catch(e) {
             console.error('Native function call failed.');
-        }                
+        } 
     }
 
     // ios > js call method
-    returnWelcomeButtonType(buttonType) {
-        this.setState({...this.state, enableButton: true, buttonType});
-    }
+    returnWelcomeButtonType = buttonType => this.setState({...this.state, enableButton: true, buttonType});
 
     render() {
         return (

@@ -7,13 +7,9 @@ import PropTypes from 'prop-types';
 import './FixedScrollZone.scss';
 
 class FixedScrollZone extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { visible: false };
-        this.handleScroll = this.handleScroll.bind(this);        
-    }
+    state = { visible: false }
 
-    handleScroll() {
+    handleScroll = () => {
         if (window.scrollY > 250) {
             this.setState({ visible: true });
             window.removeEventListener('scroll', this.handleScroll);

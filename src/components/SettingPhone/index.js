@@ -9,7 +9,7 @@ import SettingTextBundle, { SettingTextBundleType as TextBundleType } from '../S
 import './SettingPhone.scss';
 
 class SettingPhone extends Component {
-    handleSettingPhone() {
+    handleSettingPhone = () => {
         const addAnimation = (id, className) => document.getElementById(id).classList.add(className);
         addAnimation('average-budget-stamp', 'blink');
         addAnimation('average-budget-text', 'blink-back');
